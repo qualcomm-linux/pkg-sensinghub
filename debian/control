@@ -6,7 +6,7 @@ Build-Depends: debhelper-compat (= 13), pkgconf, libglib2.0-dev, protobuf-compil
  libprotobuf-dev
 Standards-Version: 4.6.2
 Rules-Requires-Root: no
-Homepage: https://git.codelinaro.org/clo/le/platform/vendor/qcom-opensource/sensing-hub.git
+Homepage: https://github.com/qualcomm/sensinghub
 
 Package: qcom-sensing-hub
 Architecture: arm64
