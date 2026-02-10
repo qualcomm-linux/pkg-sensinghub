@@ -32,7 +32,7 @@ on:
 
       builder_runner:
         type: choice
-        default: ubuntu-latest
+        default: lecore-prd-u2404-arm64-xlrg-od-ephem
         options:
           - ubuntu-latest
           - lecore-prd-u2404-arm64-xlrg-od-ephem
