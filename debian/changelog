@@ -1,3 +1,9 @@
+qcom-sensing-hub (1.0.4-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Tue, 10 Feb 2026 22:42:34 +0000
+
 qcom-sensing-hub (1.0.4) noble; urgency=low
 
   * Update ISession Headers Documentation
