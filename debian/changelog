@@ -1,9 +1,3 @@
-qcom-sensing-hub (2.0.0-1) noble; urgency=medium
-
-  * Port utils code into sensinghub.
-
- -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Mon, 23 Mar 2026 05:30:00 +0530
- 
 qcom-sensing-hub (1.0.4-1) UNRELEASED; urgency=medium
 
   * New upstream release
