@@ -1,8 +1,9 @@
-qcom-sensing-hub (1.0.4-1) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.0.0-1) UNRELEASED; urgency=medium
 
   * New upstream release
+  * New upstream release
 
- -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Tue, 10 Feb 2026 22:42:34 +0000
+ -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Tue, 24 Mar 2026 08:51:07 +0000
 
 qcom-sensing-hub (1.0.4) noble; urgency=low
 
