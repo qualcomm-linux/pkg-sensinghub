@@ -1,3 +1,9 @@
+qcom-sensing-hub (2.0.0-2) UNRELEASED; urgency=medium
+
+  * Initial commit
+
+ -- Bhanu Vivek Matsa <quic_bmasta@quicinc.com>  Wed, 15 Apr 2026 04:46:48 +0000
+
 qcom-sensing-hub (2.0.0-1) unstable; urgency=medium
 
   * New upstream release
