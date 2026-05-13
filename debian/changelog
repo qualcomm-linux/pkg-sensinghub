@@ -1,8 +1,9 @@
-qcom-sensing-hub (2.0.0-3) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.0.0-3) unstable; urgency=medium
 
+  [ Bhanu Vivek Matsa ]
   * Initial commit
 
- -- Bhanu Vivek Matsa <quic_bmasta@quicinc.com>  Wed, 13 May 2026 04:23:52 +0000
+ -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Wed, 13 May 2026 04:28:04 +0000
 
 qcom-sensing-hub (2.0.0-2) unstable; urgency=medium
 
