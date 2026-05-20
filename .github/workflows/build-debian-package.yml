@@ -38,3 +38,4 @@ jobs:
       debian-ref: ${{ inputs.debian-ref }}
       suite: ${{ inputs.suite }}
       debusine-parent-workspace: ${{ vars.DEBUSINE_PARENT_WORKSPACE || 'ci' }}
+    secrets: inherit
