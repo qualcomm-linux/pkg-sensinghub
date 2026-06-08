@@ -2,8 +2,11 @@
 
 %:
 	dh $@
-
 override_dh_auto_configure:
-	dh_auto_configure -- --enable-versioned-lib
+	dh_auto_configure -- CFLAGS="$(CFLAGS) -I/usr/include/nanopb" CXXFLAGS="$(CXXFLAGS) -I/usr/include/nanopb" CPPFLAGS="$(CPPFLAGS) -I/usr/include/nanopb" --enable-versioned-lib
+
+override_dh_auto_build:
+	dh_auto_build -- LDFLAGS="$(LDFLAGS) -lprotobuf-nanopb"
+
 override_dh_install:
 	dh_install

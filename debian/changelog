@@ -3,7 +3,6 @@ qcom-sensing-hub (2.1.0-1) UNRELEASED; urgency=medium
   * New upstream release 2.1.0
   * Nanopb migration replacing protobuf for sensor communication
   * Add sessionlogger subsystem (ISessionLogger, SensorsDiagLogger)
-  * Add qshPb utilities for nanopb sensor protocol handling
 
  -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Mon, 09 Jun 2026 03:04:49 +0000
 

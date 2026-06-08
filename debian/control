@@ -2,11 +2,11 @@ Source: qcom-sensing-hub
 Section: libs
 Priority: optional
 Maintainer: Bhanu Vivek Matsa <quic_bmasta@quicinc.com>
-Build-Depends: debhelper-compat (= 13), pkgconf, libglib2.0-dev, protobuf-compiler,
- libprotobuf-dev
+Build-Depends: debhelper-compat (= 13), pkgconf, libtool, libglib2.0-dev, protobuf-compiler,
+ libprotobuf-dev, nanopb, libnanopb-dev
 Standards-Version: 4.6.2
 Rules-Requires-Root: no
-Homepage: https://github.com/qualcomm/sensinghub
+Homepage: https://git.codelinaro.org/clo/le/platform/vendor/qcom-opensource/sensing-hub.git
 
 Package: qcom-sensing-hub
 Architecture: arm64
