@@ -1,1 +1,4 @@
 extend-diff-ignore = ^\.github
+extend-diff-ignore = ^CONTRIBUTING\.md
+extend-diff-ignore = ^CODE-OF-CONDUCT\.md
+extend-diff-ignore = ^SECURITY\.md
