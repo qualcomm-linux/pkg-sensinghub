@@ -1,4 +1,4 @@
-name: Qualcomm Preflight Checks
+name: QC Preflight Checks
 on:
   pull_request:
   push:
