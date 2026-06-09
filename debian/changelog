@@ -1,9 +1,10 @@
-qcom-sensing-hub (2.1.1-1) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.1.1-1) resolute; urgency=medium
 
+  [ Bhanu Vivek Matsa ]
   * New upstream release 2.1.1
   * sensors: add parsing logic for socid in qshJsonParser
 
- -- Bhanu Vivek Matsa <quic_bmasta@quicinc.com>  Tue, 09 Jun 2026 12:42:47 +0000
+ -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Tue, 09 Jun 2026 13:09:05 +0000
 
 qcom-sensing-hub (2.1.0-1) resolute; urgency=medium
 
