@@ -8,4 +8,4 @@ Thanks for your interest in contributing to Qualcomm Sensing Hub! Please read ou
 
 ## License
 
-Qualcomm Sensing Hub is licensed under the BSD 3-clause "New" or "Revised" License. Check out the [LICENSE](LICENSE.txt) for more details
+pkg-sensinghub is licensed under the [BSD-3-Clause License](https://spdx.org/licenses/BSD-3-Clause.html). See [LICENSE.txt](https://github.com/qualcomm-linux/pkg-sensinghub/blob/qcom/ubuntu/resolute/LICENSE.txt) for the full license text.
