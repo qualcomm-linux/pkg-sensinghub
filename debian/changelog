@@ -1,17 +1,11 @@
-qcom-sensing-hub (2.1.0-2~) UNRELEASED; urgency=medium
-
-  * WIP — update changelog before next release
-
- -- Bhanu Vivek Matsa <quic_bmasta@quicinc.com>  Mon, 08 Jun 2026 22:25:01 +0000
-
-qcom-sensing-hub (2.1.0-1) noble; urgency=medium
+qcom-sensing-hub (2.1.0-1) UNRELEASED; urgency=medium
 
   [ Venkata Akhil Segu ]
   * New upstream release 2.1.0
   * Nanopb migration replacing protobuf for sensor communication
   * Add sessionlogger subsystem (ISessionLogger, SensorsDiagLogger)
 
- -- GitHub Service Bot <githubservice@qti.qualcomm.com>  Mon, 08 Jun 2026 22:22:21 +0000
+ -- vsegu <vsegu@qti.qualcomm.com>  Mon, 08 Jun 2026 22:22:21 +0000
 
 qcom-sensing-hub (2.0.0-4) UNRELEASED; urgency=medium
 
