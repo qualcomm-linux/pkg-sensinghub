@@ -1,6 +1,5 @@
 name: QC Preflight Checks
 on:
-  on:
   pull_request:
   push:
   workflow_dispatch:
