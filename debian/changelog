@@ -1,4 +1,4 @@
-qcom-sensing-hub (2.1.1-1) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.1.1-0qli+staging1) UNRELEASED; urgency=medium
 
   * New upstream release 2.1.1
   * sensors: add parsing logic for socid in qshJsonParser
