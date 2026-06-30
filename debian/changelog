@@ -1,3 +1,9 @@
+qcom-sensing-hub (2.1.1-0qli+staging1~bpo14.1~) UNRELEASED; urgency=medium
+
+  * Unreleased changes
+
+ -- root <root@4dc7b1514436>  Tue, 30 Jun 2026 11:02:22 +0000
+
 qcom-sensing-hub (2.1.1-0qli+staging1~bpo13.1) trixie; urgency=medium
 
   [ Bhanu Vivek Matsa ]
