@@ -1,8 +1,19 @@
-qcom-sensing-hub (2.1.1-0qli+staging1~bpo14.1~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.2.1-0qli+staging1~bpo14.1~) UNRELEASED; urgency=medium
 
   * Unreleased changes
 
- -- root <root@4dc7b1514436>  Tue, 30 Jun 2026 11:02:22 +0000
+ -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Fri, 10 Jul 2026 10:24:01 +0000
+
+qcom-sensing-hub (2.2.1-0qli+staging1~bpo13.1) trixie; urgency=medium
+
+  [ Venkata Akhil Segu ]
+  * New upstream release 2.2.1
+  * Add support for sns_color proto
+  * Fix decoding of non-null-terminated string attributes
+  * sensors: Add overloaded getSession() for backward compatibility
+  * build: fix native build for nanopb-migrated codebase
+
+ -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Fri, 10 Jul 2026 10:24:01 +0000
 
 qcom-sensing-hub (2.1.1-0qli+staging1~bpo13.1) trixie; urgency=medium
 
