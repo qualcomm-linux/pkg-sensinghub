@@ -1,25 +1,29 @@
-Source: qcom-sensing-hub
-Section: libs
-Priority: optional
+Source: qcom-sensing-hub-prebuilts
 Maintainer: Bhanu Vivek Matsa <quic_bmasta@quicinc.com>
-Build-Depends: debhelper-compat (= 13), pkgconf, libtool, libglib2.0-dev, protobuf-compiler,
- libprotobuf-dev, nanopb, libnanopb-dev
 Standards-Version: 4.6.2
+Section: misc
+Priority: optional
 Rules-Requires-Root: no
-Homepage: https://git.codelinaro.org/clo/le/platform/vendor/qcom-opensource/sensing-hub.git
+Build-Depends: debhelper-compat (= 13)
 
 Package: qcom-sensing-hub
 Architecture: arm64
+Multi-Arch: same
+Section: libs
+Priority: optional
 Replaces: libsensinghub1
 Breaks: libsensinghub1
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, libc6, libstdc++6
 Description: Qualcomm Sensing-hub APIs Library
+ Runtime libraries for the Qualcomm Sensing-hub framework.
 
 Package: qcom-sensing-hub-dev
 Architecture: arm64
+Multi-Arch: same
+Section: libdevel
+Priority: optional
 Replaces: libsensinghub-dev
 Breaks: libsensinghub-dev
-Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends},
- qcom-sensing-hub (= ${binary:Version})
+Depends: ${misc:Depends}, qcom-sensing-hub (= ${binary:Version})
 Description: Qualcomm Sensing-hub APIs Library dev package
+ Development headers and libraries for the Qualcomm Sensing-hub framework.
