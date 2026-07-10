@@ -1,53 +1,12 @@
-#!/usr/bin/make -rRf
-
-export DH_VERBOSE=1
+#!/usr/bin/make -f
 
 %:
 	dh $@
-
 override_dh_auto_configure:
-	:
+	dh_auto_configure -- CFLAGS="$(CFLAGS) -I/usr/include/nanopb" CXXFLAGS="$(CXXFLAGS) -I/usr/include/nanopb" CPPFLAGS="$(CPPFLAGS) -I/usr/include/nanopb" --enable-versioned-lib
 
 override_dh_auto_build:
-	:
-
-override_dh_auto_clean:
-	:
-
-override_dh_auto_install:
-	# -------- qcom-sensing-hub (runtime libs + bin + etc) --------
-	mkdir -p debian/qcom-sensing-hub/usr/lib/aarch64-linux-gnu
-	cp -a data/qcom-sensing-hub/arm64/usr/lib/aarch64-linux-gnu/. debian/qcom-sensing-hub/usr/lib/aarch64-linux-gnu/
-	if [ -d data/qcom-sensing-hub/arm64/usr/bin ]; then \
-		mkdir -p debian/qcom-sensing-hub/usr/bin; \
-		cp -a data/qcom-sensing-hub/arm64/usr/bin/. debian/qcom-sensing-hub/usr/bin/; \
-	fi
-	if [ -d data/qcom-sensing-hub/arm64/etc ]; then \
-		mkdir -p debian/qcom-sensing-hub/etc; \
-		cp -a data/qcom-sensing-hub/arm64/etc/. debian/qcom-sensing-hub/etc/; \
-	fi
-
-	# -------- qcom-sensing-hub-dev (dev headers + static libs + pkgconfig) --------
-	mkdir -p debian/qcom-sensing-hub-dev/usr/lib/aarch64-linux-gnu
-	mkdir -p debian/qcom-sensing-hub-dev/usr/include
-	cp -a data/qcom-sensing-hub-dev/arm64/usr/lib/aarch64-linux-gnu/. debian/qcom-sensing-hub-dev/usr/lib/aarch64-linux-gnu/
-	cp -a data/qcom-sensing-hub-dev/arm64/usr/include/. debian/qcom-sensing-hub-dev/usr/include/
-	if [ -d data/qcom-sensing-hub-dev/arm64/usr/lib/aarch64-linux-gnu/pkgconfig ]; then \
-		mkdir -p debian/qcom-sensing-hub-dev/usr/lib/aarch64-linux-gnu/pkgconfig; \
-		cp -a data/qcom-sensing-hub-dev/arm64/usr/lib/aarch64-linux-gnu/pkgconfig/. debian/qcom-sensing-hub-dev/usr/lib/aarch64-linux-gnu/pkgconfig/; \
-	fi
+	dh_auto_build -- LDFLAGS="$(LDFLAGS) -lprotobuf-nanopb"
 
 override_dh_install:
-	:
-
-override_dh_strip:
-	:
-
-override_dh_dwz:
-	:
-
-override_dh_shlibdeps:
-	:
-
-override_dh_fixperms:
-	:
+	dh_install
