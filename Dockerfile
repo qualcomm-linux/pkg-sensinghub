@@ -1,5 +1,4 @@
-FROM public.ecr.aws/lts/ubuntu:22.04
-
+FROM ubuntu:24.04
 ENV DEBIAN_FRONTEND=noninteractive
 ARG USER
 ARG USER_ID
@@ -17,8 +16,8 @@ RUN bash -xe -- create_user.sh && rm -rf -- * && rm -rf -- /var/lib/apt/lists/*
 
 # Set timezone to UTC
 RUN TZ="Etc/UTC" \
-    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
-    echo $TZ | sudo tee /etc/timezone
+    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+    echo $TZ > /etc/timezone
 
 # Install required dependencies
 RUN apt-get update && apt install -y apt-transport-https apt-utils fuseext2 \
@@ -55,27 +54,29 @@ RUN apt-get update && apt install -y apt-transport-https apt-utils fuseext2 \
 	xterm \
 	xz-utils \
 	zstd \
-	# --- Autotools & protobuf for SensingHub build ---
-    autoconf \
-    automake \
-    libtool \
-    pkg-config \
-    protobuf-compiler \
-    libprotobuf-dev \
-    && rm -rf -- /var/lib/apt/lists/*
+	autoconf \
+	automake \
+	libtool \
+	pkg-config \
+	protobuf-compiler \
+	libprotobuf-dev \
+	nanopb \
+	libnanopb-dev \
+	libglib2.0-dev \
+	&& rm -rf -- /var/lib/apt/lists/*
 
 # Install Python packages
-RUN pip install --no-cache-dir requests kas==4.7
+RUN pip install --no-cache-dir requests kas==4.7 --break-system-packages
 
 # Set python default
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
 # Ensure /bin/sh points to bash
 RUN ln -sf /bin/bash /bin/sh
 
 # Locale
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y --allow-downgrades locales && \
+	apt-get install --no-install-recommends -y --allow-downgrades locales && \
     rm -rf /var/lib/apt/lists/* && \
     sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     echo 'LANG="en_US.UTF-8"' > /etc/default/locale && \
