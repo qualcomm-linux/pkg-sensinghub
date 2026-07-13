@@ -1,8 +1,8 @@
-qcom-sensing-hub (2.2.1-0qli+staging3~bpo13.1~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.2.1-0qli+staging3~bpo13.1) trixie; urgency=medium
 
   * Unreleased changes
 
- -- root <root@b370e2c4433b>  Fri, 13 Jul 2026 15:12:50 +0000
+ -- root <root@2204c913f918>  Mon, 13 Jul 2026 18:57:34 +0000
 
 qcom-sensing-hub (2.2.1-0qli+staging2~bpo13.1) trixie; urgency=medium
 
