@@ -1,9 +1,15 @@
+qcom-sensing-hub (2.2.1-0qli+staging3~) UNRELEASED; urgency=medium
+
+  * Unreleased changes
+
+ -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Tue, 14 Jul 2026 03:29:04 +0000
+
 qcom-sensing-hub (2.2.1-0qli+staging2) forky; urgency=medium
 
   [ Venkata Akhil Segu]
   * Removed the versioned lib.
 
- -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Fri, 14 Jul 2026 03:29:04 +0000
+ -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Tue, 14 Jul 2026 03:29:04 +0000
 
 qcom-sensing-hub (2.2.1-0qli+staging1) forky; urgency=medium
 
