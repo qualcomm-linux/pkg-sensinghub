@@ -8,15 +8,11 @@ qcom-sensing-hub (2.2.1-1) resolute; urgency=medium
 
   [ Venkata Akhil Segu ]
   * New upstream release 2.2.1
-  * apis: Add sns_color.proto defining Color Sensor API with illuminance,
-    color temperature and CIE chromaticity output fields
+  * apis: Add sns_color.proto
   * session: Add overloaded getSession() with no arguments for backward
     compatibility with callers that use the default sensing hub
   * utils: Fix decoding of non-null-terminated string attributes in
     qshPb to avoid undefined behaviour on string reads
-  * build: Fix native build for nanopb-migrated codebase; add nanopb
-    and libnanopb-dev dependencies; regenerate proto files on build
-  * docker: Update base image from Ubuntu 22.04 to 24.04
   * d/rules: Remove --enable-versioned-lib flag
 
  -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Tue, 14 Jul 2026 13:59:47 +0530
