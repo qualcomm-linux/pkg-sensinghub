@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Bhanu Vivek Matsa <quic_bmasta@quicinc.com>
 Build-Depends:
  debhelper-compat (= 13),
+Build-Depends-Arch:
  libglib2.0-dev,
  libnanopb-dev,
  libprotobuf-dev,
