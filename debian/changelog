@@ -1,8 +1,9 @@
-qcom-sensing-hub (2.2.2-0qli+staging1~bpo13.1~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.2.2-0qli+staging1~bpo13.1) trixie; urgency=medium
 
+  [ Venkata Akhil Segu ]
   * Unreleased changes
 
- -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Fri, 24 Jul 2026 06:36:13 +0000
+ -- Debusine Action GitHub Bot <noreply@bot.invalid>  Tue, 28 Jul 2026 08:41:19 +0000
 
 qcom-sensing-hub (2.2.2-0qli+staging1~bpo13.1) trixie; urgency=medium
 
