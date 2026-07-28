@@ -1,3 +1,9 @@
+qcom-sensing-hub (2.2.2-0qli+staging1~bpo13.1qli+staging1~) UNRELEASED; urgency=medium
+
+  * Unreleased changes
+
+ -- Debusine Action GitHub Bot <noreply@bot.invalid>  Tue, 28 Jul 2026 08:44:07 +0000
+
 qcom-sensing-hub (2.2.2-0qli+staging1~bpo13.1) trixie; urgency=medium
 
   [ Venkata Akhil Segu ]
