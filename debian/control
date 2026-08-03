@@ -15,6 +15,8 @@ Build-Depends-Arch:
  protobuf-compiler,
 Standards-Version: 4.6.2
 Homepage: https://github.com/qualcomm/sensinghub
+Vcs-Browser: https://github.com/qualcomm-linux/pkg-sensinghub
+Vcs-Git: https://github.com/qualcomm-linux/pkg-sensinghub.git
 
 Package: libsensinghub1
 Architecture: arm64
