@@ -2,6 +2,7 @@
 
 %:
 	dh $@
+
 override_dh_auto_configure:
 	dh_auto_configure -- CFLAGS="$(CFLAGS) -I/usr/include/nanopb" CXXFLAGS="$(CXXFLAGS) -I/usr/include/nanopb" CPPFLAGS="$(CPPFLAGS) -I/usr/include/nanopb"
 
