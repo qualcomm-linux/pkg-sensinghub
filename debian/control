@@ -31,11 +31,11 @@ Description: Qualcomm Sensing-hub APIs Library
 
 Package: qcom-sensing-hub-dev
 Architecture: arm64
+Section: libdevel
 Replaces:
  libsensinghub-dev,
 Breaks:
  libsensinghub-dev,
-Section: libdevel
 Depends:
  qcom-sensing-hub (= ${binary:Version}),
  ${misc:Depends},
