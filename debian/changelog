@@ -2,14 +2,14 @@ qcom-sensing-hub (2.2.1-0qli+staging4~) UNRELEASED; urgency=medium
 
   * Unreleased changes
 
- -- root <root@20d3b40b2e1c>  Mon, 13 Jul 2026 22:23:10 +0000
+ -- Debusine Action GitHub Bot <noreply@bot.invalid>  Mon, 13 Jul 2026 22:23:10 +0000
 
 qcom-sensing-hub (2.2.1-0qli+staging3) forky; urgency=medium
 
   [ Venkata Akhil Segu ]
   * Unreleased changes
 
- -- root <root@34d053c64381>  Mon, 13 Jul 2026 22:20:15 +0000
+ -- Debusine Action GitHub Bot <noreply@bot.invalid>  Mon, 13 Jul 2026 22:20:15 +0000
 
 qcom-sensing-hub (2.2.1-0qli+staging2) forky; urgency=medium
 
@@ -35,7 +35,7 @@ qcom-sensing-hub (2.1.1-0qli+staging1) forky; urgency=medium
   * New upstream release 2.1.1
   * sensors: add parsing logic for socid in qshJsonParser
 
- -- root <root@98348d34ec34>  Tue, 30 Jun 2026 09:47:19 +0000
+ -- Debusine Action GitHub Bot <noreply@bot.invalid>  Tue, 30 Jun 2026 09:47:19 +0000
 
 qcom-sensing-hub (2.1.0-1) noble; urgency=medium
 
