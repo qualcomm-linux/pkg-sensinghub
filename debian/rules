@@ -6,7 +6,10 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 	dh $@
 
 override_dh_auto_configure:
-	dh_auto_configure -- CFLAGS="$(CFLAGS) -I/usr/include/nanopb" CXXFLAGS="$(CXXFLAGS) -I/usr/include/nanopb" CPPFLAGS="$(CPPFLAGS) -I/usr/include/nanopb"
+	dh_auto_configure -- \
+		CFLAGS="$(CFLAGS) -I/usr/include/nanopb" \
+		CXXFLAGS="$(CXXFLAGS) -I/usr/include/nanopb" \
+		CPPFLAGS="$(CPPFLAGS) -I/usr/include/nanopb"
 
 override_dh_auto_build:
 	dh_auto_build -- LDFLAGS="$(LDFLAGS) -lprotobuf-nanopb"
