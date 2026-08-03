@@ -14,7 +14,7 @@ Build-Depends-Arch:
  pkgconf,
  protobuf-compiler,
 Standards-Version: 4.6.2
-Homepage: https://git.codelinaro.org/clo/le/platform/vendor/qcom-opensource/sensing-hub.git
+Homepage: https://github.com/qualcomm/sensinghub
 
 Package: libsensinghub1
 Architecture: arm64
