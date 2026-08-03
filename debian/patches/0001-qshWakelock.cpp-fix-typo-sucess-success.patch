@@ -1,0 +1,40 @@
+From 45d9c2a81e37826963a0c0b730d7cebbcf13acd6 Mon Sep 17 00:00:00 2001
+From: Agathe Porte <agathe.porte@oss.qualcomm.com>
+Date: Mon, 3 Aug 2026 17:23:43 +0200
+Subject: [PATCH] qshWakelock.cpp: fix typo sucess -> success
+
+Fixes the following lintian warning:
+
+    X: libsensinghub1: spelling-error-in-binary sucess success
+    [usr/lib/aarch64-linux-gnu/libqshUtil.so.1.0.0]
+
+Signed-off-by: Agathe Porte <agathe.porte@oss.qualcomm.com>
+---
+ utils/src/qshWakelock.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/utils/src/qshWakelock.cpp b/utils/src/qshWakelock.cpp
+index 7d827ad..067beb8 100644
+--- a/utils/src/qshWakelock.cpp
++++ b/utils/src/qshWakelock.cpp
+@@ -121,7 +121,7 @@ int32_t qshWakelock::acquire()
+   int32_t ret = -1;
+   if (mFds[QSH_POWER_WAKE_lOCK_ACQUIRE_INDEX] >= 0) {
+     if (write( mFds[QSH_POWER_WAKE_lOCK_ACQUIRE_INDEX], mQshWakelockName.c_str(), mQshWakelockName.length()+1) > 0) {
+-      sns_logv("sucess wakelock acquire:%s", mQshWakelockName.c_str());
++      sns_logv("success wakelock acquire:%s", mQshWakelockName.c_str());
+       mIsHeld = true;
+       mCondition.notify_one();
+       ret = 0;
+@@ -139,7 +139,7 @@ int32_t qshWakelock::release()
+   int32_t ret = -1;
+   if (mFds[QSH_POWER_WAKE_lOCK_RELEASE_INDEX] >= 0) {
+     if (write( mFds[QSH_POWER_WAKE_lOCK_RELEASE_INDEX],mQshWakelockName.c_str(), mQshWakelockName.length()+1) > 0) {
+-      sns_logv("sucess release %s wakelock", mQshWakelockName.c_str());
++      sns_logv("success release %s wakelock", mQshWakelockName.c_str());
+       mIsHeld = false;
+       ret = 0;
+     } else {
+-- 
+2.53.0
+
