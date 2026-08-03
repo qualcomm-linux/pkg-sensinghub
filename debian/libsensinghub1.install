@@ -1,3 +1,2 @@
 etc/sensors/proto
-usr/bin
 usr/lib/${DEB_HOST_MULTIARCH}/lib*.so.*

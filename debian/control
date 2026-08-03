@@ -33,3 +33,12 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
 Description: Qualcomm Sensing-hub APIs Library dev package
+
+Package: sensinghub-session-client
+Architecture: arm64
+Section: misc
+Depends:
+ libsensinghub1 (= ${binary:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Qualcomm Sensing-hub APIs session client
