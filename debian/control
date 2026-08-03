@@ -2,6 +2,8 @@ Source: qcom-sensing-hub
 Section: libs
 Priority: optional
 Maintainer: Bhanu Vivek Matsa <quic_bmasta@quicinc.com>
+Uploaders:
+ Agathe Porte <agathe.porte@oss.qualcomm.com>,
 Build-Depends:
  debhelper-compat (= 13),
 Build-Depends-Arch:
