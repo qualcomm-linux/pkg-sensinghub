@@ -31,7 +31,6 @@ Section: libdevel
 Depends:
  libsensinghub1 (= ${binary:Version}),
  ${misc:Depends},
- ${shlibs:Depends},
 Description: Qualcomm Sensing-hub APIs Library dev package
 
 Package: sensinghub-session-client
