@@ -1,5 +1,5 @@
 Source: qcom-sensing-hub
-Section: libs
+Section: contrib/libs
 Maintainer: Agathe Porte <agathe.porte@oss.qualcomm.com>
 Build-Depends:
  debhelper-compat (= 13),
@@ -31,7 +31,7 @@ Description: Qualcomm Sensing Hub (runtime libraries)
 
 Package: libsensinghub-dev
 Architecture: arm64
-Section: libdevel
+Section: contrib/libdevel
 Depends:
  libsensinghub1 (= ${binary:Version}),
  ${misc:Depends},
@@ -45,7 +45,7 @@ Description: Qualcomm Sensing Hub (development files)
 
 Package: sensinghub-session-client
 Architecture: arm64
-Section: misc
+Section: contrib/misc
 Depends:
  libsensinghub1 (= ${binary:Version}),
  ${misc:Depends},

@@ -1,4 +1,8 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Disclaimer:
+ The project seems to rely on libQshSession.so to perform some of its
+ functionalities, yet this file is shipped in non-free via
+ qcom-sensors-core. Move this project to contrib while things are sorted out.
 
 Files: *
 Copyright:
