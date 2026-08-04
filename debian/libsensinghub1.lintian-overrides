@@ -1,0 +1,3 @@
+# The project creates multiple shared libraries that would be busywork to keep
+# in separate packages given that they all have the same soversion.
+package-name-doesnt-match-sonames libqshUtil1 libsensinghubapi-c1 libsensinghubapi1 libsensinghublogger1 libsensinghubsession1
