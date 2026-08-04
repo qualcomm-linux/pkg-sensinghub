@@ -58,4 +58,4 @@ Description: Qualcomm Sensing Hub (session client)
  APIs that enable applications and services to interact with the hub
  efficiently, reducing the need for frequent application processor wakeups.
  .
- This package provides files the SessionClient example program.
+ This package provides the SessionClient example program.
