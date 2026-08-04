@@ -1,4 +1,3 @@
-From 45d9c2a81e37826963a0c0b730d7cebbcf13acd6 Mon Sep 17 00:00:00 2001
 From: Agathe Porte <agathe.porte@oss.qualcomm.com>
 Date: Mon, 3 Aug 2026 17:23:43 +0200
 Subject: [PATCH] qshWakelock.cpp: fix typo sucess -> success
@@ -35,6 +34,3 @@ index 7d827ad..067beb8 100644
        mIsHeld = false;
        ret = 0;
      } else {
--- 
-2.53.0
-
