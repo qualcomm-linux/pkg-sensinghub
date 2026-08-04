@@ -1,2 +1,2 @@
-usr/share/sensors/proto
+usr/share/sensinghub/proto
 usr/lib/${DEB_HOST_MULTIARCH}/lib*.so.*
