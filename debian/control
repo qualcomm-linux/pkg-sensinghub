@@ -13,7 +13,7 @@ Build-Depends-Arch:
  nanopb,
  pkgconf,
  protobuf-compiler,
-Standards-Version: 4.6.2
+Standards-Version: 4.7.4
 Homepage: https://github.com/qualcomm/sensinghub
 Vcs-Browser: https://github.com/qualcomm-linux/pkg-sensinghub
 Vcs-Git: https://github.com/qualcomm-linux/pkg-sensinghub.git
