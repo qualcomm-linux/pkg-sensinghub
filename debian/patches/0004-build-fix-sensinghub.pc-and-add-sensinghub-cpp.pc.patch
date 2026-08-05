@@ -1,0 +1,75 @@
+From: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+Date: Wed, 5 Aug 2026 15:47:34 +0300
+Subject: build: fix sensinghub.pc and add sensinghub-cpp.pc
+
+sensing-hub.pc.in described a layout that was never built. Its Cflags pointed at
+sensing-hub/common/inc, sensing-hub/session/1.0/inc and
+sensing-hub/sessionlogger/inc, none of which exist after make install, and it
+omitted utils/inc even though suidLookUp.h and qshPbSensorUtils.h are installed
+and include qshPb.h. Point it at the installed layout instead, and rename the
+file to sensinghub.pc.in to follow the package rename.
+
+Version came from @LT_VERSION@, which is LT_MAJOR.LT_MINOR.LT_PATCH and controls
+the soname rather than the release, so pkg-config --modversion reported 1.0.0
+regardless of what was built. Take it from @PACKAGE_VERSION@ instead.
+
+Libs listed three of the five installed libraries. Add -lsensinghubapi-c, which
+both libqshUtil and libsensinghublogger link against, and @NANOPB_LIBS@ for the
+nanopb runtime. Add a protodir variable so consumers can locate the .proto files
+for their own protoc invocations.
+
+Add sensinghub-cpp.pc for the protobuf C++ API. libsensinghubapi is built and
+installed but was unreachable through pkg-config, and it cannot share the
+existing Cflags line because proto_gen and nanopb_gen collide on 37 basenames
+with incompatible APIs.
+
+Signed-off-by: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+---
+ Makefile.am          |  2 +-
+ configure.ac         |  1 +
+ sensinghub-cpp.pc.in | 12 ++++++++++++
+ 3 files changed, 14 insertions(+), 1 deletion(-)
+ create mode 100644 sensinghub-cpp.pc.in
+
+diff --git a/Makefile.am b/Makefile.am
+index e388b95..3c8e105 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -9,6 +9,6 @@ dirs = apis/proto \
+ SUBDIRS = $(dirs)
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+-pkgconfig_DATA = sensinghub.pc
++pkgconfig_DATA = sensinghub.pc sensinghub-cpp.pc
+ 
+ EXTRA_DIST = $(pkgconfig_DATA) README.md LICENSE.txt
+diff --git a/configure.ac b/configure.ac
+index 62a48df..9851f3b 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -109,6 +109,7 @@ AC_CONFIG_FILES([             \
+         utils/Makefile \
+ 		sessionlogger/Makefile  \
+         sensinghub.pc
++        sensinghub-cpp.pc
+                ])
+ AC_OUTPUT
+ 
+diff --git a/sensinghub-cpp.pc.in b/sensinghub-cpp.pc.in
+new file mode 100644
+index 0000000..eb259ff
+--- /dev/null
++++ b/sensinghub-cpp.pc.in
+@@ -0,0 +1,12 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++protodir=@datadir@/sensinghub/proto
++
++Name: sensing-hub
++Description: sensing-hub library protobuf C++ API
++Version: @PACKAGE_VERSION@
++Requires: protobuf
++Cflags: -I${includedir}/sensinghub/proto_gen
++Libs: -L${libdir} -lsensinghubapi
