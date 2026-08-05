@@ -1,8 +1,15 @@
-qcom-sensing-hub (2.2.2-0qli1+staging1~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.2.2-0qli2+staging1~) UNRELEASED; urgency=medium
 
   * Unreleased changes
 
- -- Debusine Action Bot <noreply@bot.invalid>  Wed, 05 Aug 2026 12:12:32 +0000
+ -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Wed, 05 Aug 2026 15:40:13 +0200
+
+qcom-sensing-hub (2.2.2-0qli2) forky; urgency=medium
+
+  [ Agathe Porte ]
+  * Import additional patches from Ali
+
+ -- Debusine Action Bot <noreply@bot.invalid>  Wed, 05 Aug 2026 13:12:13 +0000
 
 qcom-sensing-hub (2.2.2-0qli1) forky; urgency=medium
 
