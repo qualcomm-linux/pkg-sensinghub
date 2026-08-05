@@ -6,11 +6,11 @@ qcom-sensing-hub (2.2.2-0qli1~) UNRELEASED; urgency=medium
   * Install example in -dev package
   * Extend package descriptions
   * Install proto files to /usr/share/sensinghub in -dev package
-  * Introduce debian/libsensinghub1.symbols
   * Make myself maintainer
   * Move from main to contrib
+  * Import patch for version bump
 
- -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Tue, 04 Aug 2026 17:19:38 +0200
+ -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Wed, 05 Aug 2026 14:03:44 +0200
 
 qcom-sensing-hub (2.2.1-0qli+staging3) forky; urgency=medium
 
