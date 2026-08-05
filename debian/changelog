@@ -1,5 +1,6 @@
-qcom-sensing-hub (2.2.2-0qli1~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.2.2-0qli1) forky; urgency=medium
 
+  [ Agathe Porte ]
   * New upstream release
   * Rework packaging for QLI
   * Introduce sensinghub-session-client package
@@ -10,7 +11,7 @@ qcom-sensing-hub (2.2.2-0qli1~) UNRELEASED; urgency=medium
   * Move from main to contrib
   * Import patch for version bump
 
- -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Wed, 05 Aug 2026 14:03:44 +0200
+ -- Debusine Action Bot <noreply@bot.invalid>  Wed, 05 Aug 2026 12:05:48 +0000
 
 qcom-sensing-hub (2.2.1-0qli+staging3) forky; urgency=medium
 
