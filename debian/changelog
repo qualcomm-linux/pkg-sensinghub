@@ -1,6 +1,6 @@
-qcom-sensing-hub (2.2.1-2~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.2.1-2) UNRELEASED; urgency=medium
 
-  * WIP — update changelog before next release
+  * Axiom test
 
  -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Tue, 14 Jul 2026 13:59:47 +0530
 
