@@ -1,0 +1,142 @@
+From: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+Date: Wed, 5 Aug 2026 15:32:33 +0300
+Subject: build: install headers under $(pkgincludedir) and drop duplicate
+ installs
+
+All four Makefile.am files used include_HEADERS, so every public header landed
+directly in $(includedir). That puts generically named headers like ISession.h,
+SessionFactory.h, LoggerFactory.h and suid.h straight into /usr/include, where
+they are liable to collide with other packages.
+
+Switch to pkginclude_HEADERS and re-root protogendir and nanopb_includedir at
+$(pkgincludedir) so the generated headers follow. Cross-includes between the
+public headers are unqualified, so a single directory is sufficient. proto_gen
+and nanopb_gen remain separate subdirectories: they share 37 basenames with
+incompatible APIs and cannot sit on the same include path.
+
+Fix two duplicate installs in apis/proto/Makefile.am. $(proto_list) was assigned
+to both include_HEADERS and proto_files_DATA, installing every .proto file
+twice; .proto files are data, not headers, so drop the include_HEADERS line.
+$(PROTOGEN_DIR)/nanopb.pb.h was listed in both protogen_HEADERS and
+nanopb_include_HEADERS, where it was the only entry not coming from
+$(NANOPB_GEN_DIR); it still installs via protogen_HEADERS.
+
+proto_filesdir was hardcoded to /etc/sensors/proto, which ignores --prefix and
+puts read-only data under /etc. Move it to $(datadir)/sensinghub/proto.
+
+Also remove two library_includedir assignments that had no matching
+library_include_HEADERS.
+
+Fixes: #51
+
+Signed-off-by: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+---
+ apis/proto/Makefile.am    | 12 ++++--------
+ session/1.0/Makefile.am   |  6 ++----
+ sessionlogger/Makefile.am |  4 ++--
+ utils/Makefile.am         |  4 ++--
+ 4 files changed, 10 insertions(+), 16 deletions(-)
+
+diff --git a/apis/proto/Makefile.am b/apis/proto/Makefile.am
+index 47c035b..7d31431 100644
+--- a/apis/proto/Makefile.am
++++ b/apis/proto/Makefile.am
+@@ -30,7 +30,7 @@ AM_CPPFLAGS = -I./  \
+               -I$(NANOPB_GEN_DIR)
+ 
+ proto_list = $(shell find $(srcdir)/ -name "*.proto")
+-proto_filesdir = /etc/sensors/proto
++proto_filesdir = /usr/share/sensinghub/proto
+ proto_files_DATA = $(proto_list)
+ 
+ nodist_proto_SOURCES =  $(PROTOGEN_DIR)/google/protobuf/descriptor.pb.cc     \
+@@ -114,14 +114,12 @@ BUILT_SOURCES = $(PROTOGEN_DIR)/google/protobuf/descriptor.pb.h     \
+                 $(PROTOGEN_DIR)/sns_color.pb.h
+ 
+ sources_libsensinghub = $(nodist_proto_SOURCES)
+-include_HEADERS = $(proto_list)
+ 
+-protogendir = $(includedir)/proto_gen
++protogendir = $(pkgincludedir)/proto_gen
+ protogen_HEADERS = $(filter %.pb.h,$(BUILT_SOURCES))
+ 
+-nanopb_includedir = $(includedir)/nanopb_gen
+-nanopb_include_HEADERS =  $(PROTOGEN_DIR)/nanopb.pb.h                         \
+-                         $(NANOPB_GEN_DIR)/sns_std_sensor.pb.h                 \
++nanopb_includedir = $(pkgincludedir)/nanopb_gen
++nanopb_include_HEADERS =  $(NANOPB_GEN_DIR)/sns_std_sensor.pb.h                 \
+                          $(NANOPB_GEN_DIR)/sns_physical_sensor_test.pb.h       \
+                          $(NANOPB_GEN_DIR)/sns_std_event_gated_sensor.pb.h     \
+                          $(NANOPB_GEN_DIR)/sns_cal.pb.h                        \
+@@ -164,8 +162,6 @@ CLEANFILES =
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-library_includedir = $(pkgincludedir)
+-
+ lib_LTLIBRARIES = libsensinghubapi.la libsensinghubapi-c.la
+ 
+ requiredlibs_sensinghubapi = @PROTOBUF_LIBS@
+diff --git a/session/1.0/Makefile.am b/session/1.0/Makefile.am
+index 9326aee..66bc622 100644
+--- a/session/1.0/Makefile.am
++++ b/session/1.0/Makefile.am
+@@ -11,15 +11,13 @@ cpp_sources = src/SessionFactory.cpp
+ 
+ requiredlibs = -ldl
+ 
+-include_HEADERS = $(srcdir)/inc/ISession.h        \
++pkginclude_HEADERS = $(srcdir)/inc/ISession.h        \
+                   $(srcdir)/inc/SessionFactory.h     \
+                   $(top_srcdir)/common/inc/suid.h
+ 
+-library_includedir = $(pkgincludedir)
+-
+ lib_LTLIBRARIES = libsensinghubsession.la
+ libsensinghubsession_la_CC = @CC@
+ libsensinghubsession_la_SOURCES = $(cpp_sources)
+ libsensinghubsession_la_CPPFLAGS = $(AM_CPPFLAGS)
+ libsensinghubsession_la_LDFLAGS = -shared @LDFLAGS@ -version-number @LT_VERSION_NUMBER@
+-libsensinghubsession_la_LIBADD = $(requiredlibs)
+\ No newline at end of file
++libsensinghubsession_la_LIBADD = $(requiredlibs)
+diff --git a/sessionlogger/Makefile.am b/sessionlogger/Makefile.am
+index 3d3506f..6ac8f72 100644
+--- a/sessionlogger/Makefile.am
++++ b/sessionlogger/Makefile.am
+@@ -15,7 +15,7 @@ AM_CPPFLAGS = \
+ libsensinghublogger_la_SOURCES =  ./src/LoggerFactory.cpp    \
+                                                          ./src/SensorsDiagLogger.cpp
+     
+-include_HEADERS = $(srcdir)/inc/*.h
++pkginclude_HEADERS = $(srcdir)/inc/*.h
+ 
+ requiredlibs = $(top_builddir)/apis/proto/libsensinghubapi-c.la    \
+                        $(top_builddir)/session/1.0/libsensinghubsession.la
+@@ -28,4 +28,4 @@ if USE_GLIB
+  libsensinghublogger_la_CPPFLAGS += -DUSE_GLIB @GLIB_CFLAGS@
+  libsensinghublogger_la_LDFLAGS += @GLIB_LIBS@
+ endif
+-libsensinghublogger_la_LIBADD = $(requiredlibs)
+\ No newline at end of file
++libsensinghublogger_la_LIBADD = $(requiredlibs)
+diff --git a/utils/Makefile.am b/utils/Makefile.am
+index caca99c..de46250 100644
+--- a/utils/Makefile.am
++++ b/utils/Makefile.am
+@@ -19,7 +19,7 @@ cpp_sources_qshutils = ./src/qshLog.cpp \
+                        ./src/qshJsonParser.cpp \
+                        ./src/qshPb.cpp
+ 
+-include_HEADERS = $(srcdir)/inc/qshJsonParser.h \
++pkginclude_HEADERS = $(srcdir)/inc/qshJsonParser.h \
+                   $(srcdir)/inc/qshLog.h        \
+                   $(srcdir)/inc/qshPb.h         \
+                   $(srcdir)/inc/qshSSR.h        \
+@@ -43,4 +43,4 @@ if USE_GLIB
+  libqshUtil_la_CPPFLAGS += -DUSE_GLIB @GLIB_CFLAGS@
+  libqshUtil_la_LDFLAGS += @GLIB_LIBS@
+ endif
+-libqshUtil_la_LIBADD = $(requiredlibs)
+\ No newline at end of file
++libqshUtil_la_LIBADD = $(requiredlibs)
