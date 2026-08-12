@@ -189,7 +189,9 @@ namespace qshPb {
 
 
       if (data.buf != nullptr && data.buf_len > 0) {
-        new_attr.str.assign(reinterpret_cast<const char*>(data.buf), data.buf_len);
+        const char* ptr = reinterpret_cast<const char*>(data.buf);
+        size_t actual_len = strnlen(ptr, data.buf_len);
+        new_attr.str.assign(ptr, actual_len);
         new_attr.has_str = true;
       } else if (attr.has_flt) {
         new_attr.flt = attr.flt;
