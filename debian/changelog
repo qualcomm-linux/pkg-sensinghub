@@ -1,8 +1,9 @@
 qcom-sensing-hub (2.2.2-0qli3~) UNRELEASED; urgency=medium
 
   * Rebase patches from Ali’s Fedora work
+  * Introduce d/watch
 
- -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Fri, 21 Aug 2026 11:26:40 +0200
+ -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Fri, 21 Aug 2026 11:36:02 +0200
 
 qcom-sensing-hub (2.2.2-0qli2) forky; urgency=medium
 
