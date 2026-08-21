@@ -1,8 +1,8 @@
 qcom-sensing-hub (2.2.2-0qli3~) UNRELEASED; urgency=medium
 
-  * Unreleased changes
+  * Rebase patches from Ali’s Fedora work
 
- -- Debusine Action Bot <noreply@bot.invalid>  Wed, 05 Aug 2026 13:18:44 +0000
+ -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Fri, 21 Aug 2026 11:26:40 +0200
 
 qcom-sensing-hub (2.2.2-0qli2) forky; urgency=medium
 
