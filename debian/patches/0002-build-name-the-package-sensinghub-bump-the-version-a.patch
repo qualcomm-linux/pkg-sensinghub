@@ -1,6 +1,7 @@
 From: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
-Date: Wed, 5 Aug 2026 12:40:24 +0300
-Subject: build: name the package sensinghub and bump to the current version
+Date: Fri, 14 Aug 2026 16:42:53 +0300
+Subject: build: name the package sensinghub, bump the version,
+ and use LT_INIT
 
 AC_INIT declared the package as sensing-hub at version 1.0.0. Neither has been
 touched since the first release, so PACKAGE_VERSION, VERSION in config.h and the
@@ -8,16 +9,20 @@ make dist tarball name have been wrong for every version since, and the
 autotools-facing name disagreed with the rest of the project: the repo name and
 the library names use the unhyphenated form.
 
-Use sensinghub and bump the version to 2.2.2. The LT_* macros are deliberately
+Use sensinghub and bump the version to 2.2.3. The LT_* macros are deliberately
 left alone: they feed -version-number and should move on ABI changes, not on
 releases.
 
+Replace AC_PROG_LIBTOOL with LT_INIT. The former has been deprecated since
+libtool 2.0 and current autoconf warns on it.
+
 Signed-off-by: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+Signed-off-by: Agathe Porte <agathe.porte@oss.qualcomm.com>
 ---
  Makefile.am                           | 2 +-
- configure.ac                          | 6 +++---
+ configure.ac                          | 8 ++++----
  sensing-hub.pc.in => sensinghub.pc.in | 0
- 3 files changed, 4 insertions(+), 4 deletions(-)
+ 3 files changed, 5 insertions(+), 5 deletions(-)
  rename sensing-hub.pc.in => sensinghub.pc.in (100%)
 
 diff --git a/Makefile.am b/Makefile.am
@@ -33,7 +38,7 @@ index 814a7d6..e388b95 100644
  
  EXTRA_DIST = $(pkgconfig_DATA) README.md LICENSE.txt
 diff --git a/configure.ac b/configure.ac
-index 4ee7cd1..62a48df 100644
+index 4ee7cd1..b9e743a 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -5,8 +5,8 @@
@@ -42,11 +47,20 @@ index 4ee7cd1..62a48df 100644
  
 -# Initialize the sensors package version 1.0.0
 -AC_INIT([sensing-hub], 1.0.0)
-+# Initialize the sensors package version 2.2.2
-+AC_INIT([sensinghub], 2.2.2)
++# Initialize the sensors package version 2.2.3
++AC_INIT([sensinghub], 2.2.3)
  
  # Does not strictly follow GNU Coding standards
  AM_INIT_AUTOMAKE([foreign subdir-objects dist-bzip2 tar-pax])
+@@ -22,7 +22,7 @@ AC_CONFIG_MACRO_DIR([m4])
+ AC_PROG_CC
+ AM_PROG_CC_C_O
+ AC_PROG_CXX
+-AC_PROG_LIBTOOL
++LT_INIT
+ AC_PROG_AWK
+ AC_PROG_CPP
+ AC_PROG_INSTALL
 @@ -108,7 +108,7 @@ AC_CONFIG_FILES([             \
          examples/SessionClient/Makefile \
          utils/Makefile \

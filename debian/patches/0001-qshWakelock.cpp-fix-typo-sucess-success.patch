@@ -1,6 +1,6 @@
 From: Agathe Porte <agathe.porte@oss.qualcomm.com>
 Date: Mon, 3 Aug 2026 17:23:43 +0200
-Subject: qshWakelock.cpp: fix typo sucess -> success
+Subject: [PATCH] qshWakelock.cpp: fix typo sucess -> success
 
 Fixes the following lintian warning:
 

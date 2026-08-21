@@ -1,5 +1,5 @@
 From: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
-Date: Wed, 5 Aug 2026 15:32:33 +0300
+Date: Fri, 14 Aug 2026 16:53:35 +0300
 Subject: build: install headers under $(pkgincludedir) and drop duplicate
  installs
 
@@ -22,7 +22,7 @@ nanopb_include_HEADERS, where it was the only entry not coming from
 $(NANOPB_GEN_DIR); it still installs via protogen_HEADERS.
 
 proto_filesdir was hardcoded to /etc/sensors/proto, which ignores --prefix and
-puts read-only data under /etc. Move it to $(datadir)/sensinghub/proto.
+puts read-only data under /etc. Move it to $(pkgdatadir)/proto.
 
 Also remove two library_includedir assignments that had no matching
 library_include_HEADERS.
@@ -30,6 +30,7 @@ library_include_HEADERS.
 Fixes: #51
 
 Signed-off-by: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
+Signed-off-by: Agathe Porte <agathe.porte@oss.qualcomm.com>
 ---
  apis/proto/Makefile.am    | 12 ++++--------
  session/1.0/Makefile.am   |  6 ++----
@@ -38,7 +39,7 @@ Signed-off-by: Ali Erdinc Koroglu <ali.koroglu@oss.qualcomm.com>
  4 files changed, 10 insertions(+), 16 deletions(-)
 
 diff --git a/apis/proto/Makefile.am b/apis/proto/Makefile.am
-index 47c035b..7d31431 100644
+index 47c035b..60655fe 100644
 --- a/apis/proto/Makefile.am
 +++ b/apis/proto/Makefile.am
 @@ -30,7 +30,7 @@ AM_CPPFLAGS = -I./  \
@@ -46,7 +47,7 @@ index 47c035b..7d31431 100644
  
  proto_list = $(shell find $(srcdir)/ -name "*.proto")
 -proto_filesdir = /etc/sensors/proto
-+proto_filesdir = /usr/share/sensinghub/proto
++proto_filesdir = $(pkgdatadir)/proto
  proto_files_DATA = $(proto_list)
  
  nodist_proto_SOURCES =  $(PROTOGEN_DIR)/google/protobuf/descriptor.pb.cc     \

@@ -1,8 +1,10 @@
-qcom-sensing-hub (2.2.2-0qli2~bpo13+2~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.2.2-0qli3) forky; urgency=medium
 
-  * Unreleased changes
+  [ Agathe Porte ]
+  * Rebase patches from Ali’s Fedora work
+  * Introduce d/watch
 
- -- Debusine Action Bot <noreply@bot.invalid>  Wed, 05 Aug 2026 13:39:03 +0000
+ -- Debusine Action Bot <noreply@bot.invalid>  Fri, 21 Aug 2026 09:38:38 +0000
 
 qcom-sensing-hub (2.2.2-0qli2~bpo13+1) trixie; urgency=medium
 
