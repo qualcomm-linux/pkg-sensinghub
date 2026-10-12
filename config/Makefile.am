@@ -44,6 +44,18 @@ bengal_list = $(wildcard $(srcdir)/registry/hub1/sensors/bengal/*.json)
 bengal_jsondir = $(reg_config_dir)/config
 bengal_json_DATA = $(bengal_list)
 
+kalama_list = $(wildcard $(srcdir)/registry/hub1/sensors/kalama/*.json)
+kalama_jsondir = $(reg_config_dir)/config
+kalama_json_DATA = $(kalama_list)
+
+qrb5165_list = $(wildcard $(srcdir)/registry/hub1/sensors/qrb5165/*.json)
+qrb5165_jsondir = $(reg_config_dir)/config
+qrb5165_json_DATA = $(qrb5165_list)
+
+qrbx210_list = $(wildcard $(srcdir)/registry/hub1/sensors/qrbx210/*.json)
+qrbx210_jsondir = $(reg_config_dir)/config
+qrbx210_json_DATA = $(qrbx210_list)
+
 talos_list = $(shell find  $(srcdir)/registry/hub1/sensors/talos/*.json -type f)
 talos_jsondir = $(reg_config_dir)/config
 talos_json_DATA = $(talos_list)
