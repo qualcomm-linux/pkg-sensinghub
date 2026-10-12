@@ -72,7 +72,11 @@ nodist_proto_SOURCES =  $(PROTOGEN_DIR)/google/protobuf/descriptor.pb.cc     \
                        $(PROTOGEN_DIR)/sns_persist_stationary_detect.pb.cc  \
                        $(PROTOGEN_DIR)/sns_hinge_angle.pb.cc                \
                        $(PROTOGEN_DIR)/sns_gravity.pb.cc                    \
-                       $(PROTOGEN_DIR)/sns_color.pb.cc
+                       $(PROTOGEN_DIR)/sns_color.pb.cc                     \
+                       $(PROTOGEN_DIR)/sns_device_context.pb.cc             \
+                       $(PROTOGEN_DIR)/sns_human_presence_detect.pb.cc      \
+                       $(PROTOGEN_DIR)/sns_ontable_detect.pb.cc             \
+                       $(PROTOGEN_DIR)/sns_presence.pb.cc
 
 BUILT_SOURCES = $(PROTOGEN_DIR)/google/protobuf/descriptor.pb.h     \
                 $(PROTOGEN_DIR)/nanopb.pb.h                         \
@@ -113,7 +117,11 @@ BUILT_SOURCES = $(PROTOGEN_DIR)/google/protobuf/descriptor.pb.h     \
                 $(PROTOGEN_DIR)/sns_persist_stationary_detect.pb.h  \
                 $(PROTOGEN_DIR)/sns_hinge_angle.pb.h                \
                 $(PROTOGEN_DIR)/sns_gravity.pb.h                    \
-                $(PROTOGEN_DIR)/sns_color.pb.h
+                $(PROTOGEN_DIR)/sns_color.pb.h                      \
+                $(PROTOGEN_DIR)/sns_device_context.pb.h             \
+                $(PROTOGEN_DIR)/sns_human_presence_detect.pb.h      \
+                $(PROTOGEN_DIR)/sns_ontable_detect.pb.h             \
+                $(PROTOGEN_DIR)/sns_presence.pb.h
 
 sources_libsensinghub = $(nodist_proto_SOURCES)
 include_HEADERS = $(proto_list)
@@ -160,7 +168,11 @@ nanopb_include_HEADERS =  $(PROTOGEN_DIR)/nanopb.pb.h                         \
                          $(NANOPB_GEN_DIR)/sns_persist_stationary_detect.pb.h  \
                          $(NANOPB_GEN_DIR)/sns_hinge_angle.pb.h                \
                          $(NANOPB_GEN_DIR)/sns_gravity.pb.h                    \
-                         $(NANOPB_GEN_DIR)/sns_color.pb.h
+                         $(NANOPB_GEN_DIR)/sns_color.pb.h                      \
+                         $(NANOPB_GEN_DIR)/sns_device_context.pb.h             \
+                         $(NANOPB_GEN_DIR)/sns_human_presence_detect.pb.h      \
+                         $(NANOPB_GEN_DIR)/sns_ontable_detect.pb.h             \
+                         $(NANOPB_GEN_DIR)/sns_presence.pb.h
 
 
 CLEANFILES =
@@ -221,7 +233,11 @@ nodist_nanopb_SOURCES = \
                         $(NANOPB_GEN_DIR)/sns_persist_stationary_detect.pb.c  \
                         $(NANOPB_GEN_DIR)/sns_hinge_angle.pb.c                \
                         $(NANOPB_GEN_DIR)/sns_gravity.pb.c                    \
-                        $(NANOPB_GEN_DIR)/sns_color.pb.c
+                        $(NANOPB_GEN_DIR)/sns_color.pb.c                      \
+                        $(NANOPB_GEN_DIR)/sns_device_context.pb.c             \
+                        $(NANOPB_GEN_DIR)/sns_human_presence_detect.pb.c      \
+                        $(NANOPB_GEN_DIR)/sns_ontable_detect.pb.c             \
+                        $(NANOPB_GEN_DIR)/sns_presence.pb.c
 
 BUILT_SOURCES += $(nodist_nanopb_SOURCES)
 CLEANFILES += $(nodist_nanopb_SOURCES)

@@ -64,6 +64,9 @@ sns_tilt_sw_enabled.json
 sns_tilt_to_wake.json
 sns_transport_ppe.json
 sns_wrist_pedo.json
+sns_ccd_v6_0.json
+sns_ccd_v6_0_sensors.json
+sns_ccd_v6_0_te_cd_regs.json
 kodiak_psd_enable.json
 kodiak_gyro_cal.json
 default_sensors.json
