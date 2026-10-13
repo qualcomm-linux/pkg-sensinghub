@@ -37,10 +37,6 @@ AC_SUBST([PROTOBUF_CFLAGS])
 AC_SUBST([PROTOBUF_LIBS])
 AC_SUBST(PROTOBUF_VERSION)
 
-AC_SUBST([PROTOBUF_CFLAGS])
-AC_SUBST([PROTOBUF_LIBS])
-AC_SUBST(PROTOBUF_VERSION)
-
 AC_CHECK_PROG([PROTOC], [protoc], [protoc])
 AS_IF([test "x${PROTOC}" == "x"],
       [AC_MSG_ERROR([ProtoBuf compiler "protoc" not found.])])
@@ -62,11 +58,42 @@ if test "x$with_common_includes" != "xno"; then
    CFLAGS="${CFLAGS} -I${common_incdir}"
 fi
 
+AC_ARG_WITH([services],
+    AC_HELP_STRING([--with-services=DIR],
+                   [Specify the location of the services path]),
+    [servicesdir=$withval],
+    [use_services=no])
+
+if test "x$use_services" != "xno"; then
+    SERVICES_PATH="${servicesdir}"
+    AC_SUBST(SERVICES_PATH)
+fi
+
+if test "x${use_services}" = "xyes"; then
+  CPPFLAGS="${CPPFLAGS} -DSENSORS_EXCLUDE_FASTRPC_INTERNAL_HEADERS"
+fi
+
+AM_CONDITIONAL([USE_SERVICES_PATH], [test "x$use_services" != "xno"])
+
+AC_ARG_WITH([fastrpc-includes],
+  AS_HELP_STRING([--with-fastrpc-includes=DIR], [Path to FASTRPC public headers]),
+  [FASTRPC_CFLAGS="-I$withval"],
+  [FASTRPC_CFLAGS=""])
+AC_SUBST([FASTRPC_CFLAGS])
+
 AC_ARG_WITH(systemd,
         AS_HELP_STRING([--with-systemd], [include services in systemd]),
         [SYSTEMD="yes"],
         [SYSTEMD="no"])
 AM_CONDITIONAL([USE_SYSTEMD], [test "x${SYSTEMD}" != "xno"])
+
+AC_ARG_WITH([systemd-unitdir],
+    [AS_HELP_STRING([--with-systemd-unitdir=DIR],
+                    [systemd unit directory])],
+    [SYSTEMD_UNITDIR="$withval"],
+    [SYSTEMD_UNITDIR="/usr/lib/systemd/system"])
+
+AC_SUBST([SYSTEMD_UNITDIR])
 
 AC_ARG_ENABLE(versioned-lib,
         AS_HELP_STRING([--enable-versioned-lib], [enable versioned libs for debian packages]),
@@ -93,6 +120,54 @@ PKG_CHECK_MODULES([NANOPB], [nanopb],
   [NANOPB_LIBS="-lprotobuf-nanopb"])
 AC_SUBST([NANOPB_LIBS])
 
+# --- QMI path ---
+AC_ARG_WITH([qmi],
+    AC_HELP_STRING([--with-qmi=DIR],
+                   [Specify the location of the qmi libs path]),
+    [qmidir=$withval],
+    [qmidir=""])
+
+if test "x$qmidir" != "x"; then
+    QMI_PATH="${qmidir}"
+    AC_SUBST([QMI_PATH])
+else
+    AS_IF([test "x$QMIFRAMEWORK_CFLAGS" = "x" || test "x$QMIFRAMEWORK_LIBS" = "x"], [
+        PKG_CHECK_MODULES([QMIFRAMEWORK], [qmi-framework],
+            [AC_SUBST([QMIFRAMEWORK_CFLAGS])
+             AC_SUBST([QMIFRAMEWORK_LIBS])],
+            [AC_MSG_WARN([qmi-framework not found via pkg-config, skipping])])
+    ])
+fi
+
+AM_CONDITIONAL([USE_QMI_PATH], [test "x$qmidir" != "x"])
+
+AC_ARG_WITH([nanopb-gen],
+    [AS_HELP_STRING([--with-nanopb-gen=DIR], [path to nanopb generated headers])],
+    [NANOPB_GEN_DIR=$withval],
+    [NANOPB_GEN_DIR=""])
+
+AC_SUBST([NANOPB_GEN_DIR])
+
+AC_ARG_WITH([qmi-oss],
+  AS_HELP_STRING([--with-qmi-oss], [enable qmi oss code]),
+  [qmi_oss="$withval"],
+  [qmi_oss="no"])
+
+AS_IF([test "x$qmi_oss" != "xno"],
+  [AC_DEFINE([QMI_OSS_ENABLE], [1], [Enable the qmi oss code])])
+
+AC_ARG_WITH([glib],
+       AS_HELP_STRING([--with-glib],
+          [enable glib, building HLOS systems which use glib]))
+
+# ---- sensors-registry ----
+AC_ARG_WITH([base-libdir],
+    AS_HELP_STRING([--with-base-libdir=DIR],
+                   [Base lib dir for firmware installation (default: /usr/lib)]),
+    [base_libdir=$withval],
+    [base_libdir="/usr/lib"])
+AC_SUBST([base_libdir])
+
 AM_CONDITIONAL(USE_GLIB, test "x${with_glib}" = "xyes")
 m4_define([LT_MAJOR], [1])
 m4_define([LT_MINOR], [0])
@@ -106,8 +181,13 @@ AC_CONFIG_FILES([             \
         apis/proto/Makefile   \
         session/1.0/Makefile  \
         examples/SessionClient/Makefile \
+        services/sensorsdaemon/Makefile \
         utils/Makefile \
-		sessionlogger/Makefile  \
+        sessionlogger/Makefile  \
+        core/Makefile \
+        core/qshQmiIDL/Makefile \
+        core/sessionImpl/Makefile \
+        config/Makefile \
         sensing-hub.pc
                ])
 AC_OUTPUT
