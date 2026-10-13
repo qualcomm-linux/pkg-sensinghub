@@ -1,7 +1,7 @@
 Source: qcom-sensing-hub
 Section: contrib/libs
 Maintainer: Agathe Porte <agathe.porte@oss.qualcomm.com>
-Uploaders: Venkata Akhil Segu <vsegu@qti.qualcomm.com>,
+Uploaders: Venkata Akhil Segu <vsegu@qti.qualcomm.com>
 Build-Depends:
  debhelper-compat (= 13),
 Build-Depends-Arch:
