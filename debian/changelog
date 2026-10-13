@@ -1,8 +1,46 @@
-qcom-sensing-hub (2.2.2-0qli3~bpo13+2~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.3.2-0qli1~bpo13+1) UNRELEASED; urgency=medium
 
-  * Unreleased changes
+  [ Venkata Akhil Segu ]
+  * New upstream release 2.3.2
+    - Add registry configs for kalama/qrb5165/qrbx210 and new sensor protos
 
- -- Debusine Action Bot <noreply@bot.invalid>  Fri, 21 Aug 2026 09:54:51 +0000
+ -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Tue, 13 Oct 2026 06:54:29 -0700
+
+qcom-sensing-hub (2.3.1-0qli1~bpo13+1) UNRELEASED; urgency=medium
+
+  [ Venkata Akhil Segu ]
+  * New upstream release 2.3.1
+    - Add rpmsgSession communication layer
+    - Fix shikra registry config path and add systemd SOC-based service
+      gating
+    - ci: use sudo for QMI Framework/FastRPC installs into system paths
+
+ -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Tue, 13 Oct 2026 06:54:29 -0700
+
+qcom-sensing-hub (2.3.0-0qli1~bpo13+1) UNRELEASED; urgency=medium
+
+  [ Venkata Akhil Segu ]
+  * New upstream release 2.3.0
+    - Add core QMI/GLink session implementation module
+    - Add sensors config registry subsystem
+    - sensors: add sensorsdaemon (sensors.qti) service to open-source
+    - Fix installed header paths for nanopb/proto
+    - build.sh: pick qmi-headers
+    - ci: install QMI Framework and enable OSS QMI build
+    - ci: fix qmi-framework pkg-config Cflags to include qmi_framework
+      subdir
+
+ -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Tue, 13 Oct 2026 06:54:29 -0700
+
+qcom-sensing-hub (2.2.3-0qli1~bpo13+1) UNRELEASED; urgency=medium
+
+  [ Venkata Akhil Segu ]
+  * New upstream release 2.2.3
+    - sensors: load versioned QshSession library
+    - Replace pull_request_target with pull_request in GitHub Actions
+      workflow
+
+ -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Tue, 13 Oct 2026 06:54:29 -0700
 
 qcom-sensing-hub (2.2.2-0qli3~bpo13+1) trixie; urgency=medium
 
