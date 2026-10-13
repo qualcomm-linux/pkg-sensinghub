@@ -4,6 +4,8 @@ Maintainer: Agathe Porte <agathe.porte@oss.qualcomm.com>
 Uploaders: Venkata Akhil Segu <vsegu@qti.qualcomm.com>
 Build-Depends:
  debhelper-compat (= 13),
+ libqmi-framework-dev [arm64],
+ libfastrpc-dev [arm64],
 Build-Depends-Arch:
  libglib2.0-dev,
  libnanopb-dev,
@@ -12,8 +14,6 @@ Build-Depends-Arch:
  nanopb,
  pkgconf,
  protobuf-compiler,
- libqmi-framework-dev,
- libfastrpc-dev
 Standards-Version: 4.7.4
 Homepage: https://github.com/qualcomm/sensinghub
 Vcs-Browser: https://github.com/qualcomm-linux/pkg-sensinghub
