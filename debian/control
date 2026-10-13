@@ -1,6 +1,7 @@
 Source: qcom-sensing-hub
 Section: contrib/libs
 Maintainer: Agathe Porte <agathe.porte@oss.qualcomm.com>
+Uploaders: Venkata Akhil Segu <vsegu@qti.qualcomm.com>,
 Build-Depends:
  debhelper-compat (= 13),
 Build-Depends-Arch:
@@ -11,6 +12,8 @@ Build-Depends-Arch:
  nanopb,
  pkgconf,
  protobuf-compiler,
+ libqmi-framework-dev,
+ libfastrpc-dev
 Standards-Version: 4.7.4
 Homepage: https://github.com/qualcomm/sensinghub
 Vcs-Browser: https://github.com/qualcomm-linux/pkg-sensinghub
@@ -21,6 +24,7 @@ Architecture: arm64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
+ libfastrpc1
 Description: Qualcomm Sensing Hub (runtime libraries)
  Qualcomm Sensing Hub (QSH) is an always-on, low-power interface designed to
  collect, process, and combine sensor and contextual data. It offers stable
