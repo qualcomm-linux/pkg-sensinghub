@@ -2,6 +2,7 @@ qcom-sensing-hub (2.3.2-0qli1~bpo13+1~) UNRELEASED; urgency=medium
 
   [ Venkata Akhil Segu ]
   * New upstream release 2.3.2
+  * Add QMI/FastRPC and systemd service support
     - Add registry configs for kalama/qrb5165/qrbx210 and new sensor protos
 
  -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Tue, 13 Oct 2026 21:19:30 +0530
