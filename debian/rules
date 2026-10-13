@@ -3,26 +3,26 @@
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 %:
-        dh $@ --with-systemd
+	dh $@ --with-systemd
 override_dh_auto_configure:
-        dh_auto_configure -- \
-        CPPFLAGS="$(CPPFLAGS) -I/usr/include/nanopb" \
-        --enable-versioned-lib \
-        --with-qmi-oss \
-        --with-glib \
-        --with-qmi=/usr/include/qmi_framework \
-        --with-nanopb-gen=/usr/include/sensinghub/nanopb_gen \
-        --with-fastrpc-includes=/usr/include/fastrpc
+	dh_auto_configure -- \
+	CPPFLAGS="$(CPPFLAGS) -I/usr/include/nanopb" \
+	--enable-versioned-lib \
+	--with-qmi-oss \
+	--with-glib \
+	--with-qmi=/usr/include/qmi_framework \
+	--with-nanopb-gen=/usr/include/sensinghub/nanopb_gen \
+	--with-fastrpc-includes=/usr/include/fastrpc
 
 override_dh_auto_build:
-        dh_auto_build -- LDFLAGS="$(LDFLAGS) -lprotobuf-nanopb"
+	dh_auto_build -- LDFLAGS="$(LDFLAGS) -lprotobuf-nanopb"
 
 override_dh_auto_install:
-        dh_auto_install
-        install -D -m 0644 \
-        services/sensorsdaemon/sensors.qti.service \
-        $(CURDIR)/debian/tmp/usr/lib/systemd/system/sensors.qti.service
-        rm -f $(CURDIR)/debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/*.la
+	dh_auto_install
+	install -D -m 0644 \
+	services/sensorsdaemon/sensors.qti.service \
+	$(CURDIR)/debian/tmp/usr/lib/systemd/system/sensors.qti.service
+	rm -f $(CURDIR)/debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/*.la
 
 override_dh_installsystemd:
-        dh_installsystemd --name=sensors.qti
+	dh_installsystemd --name=sensors.qti
