@@ -1,8 +1,29 @@
-qcom-sensing-hub (2.2.2-0qli4~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.3.2-0qli1~) UNRELEASED; urgency=medium
 
-  * Unreleased changes
+  * New upstream release 2.3.2
+    - 2.3.2: Add registry configs for kalama/qrb5165/qrbx210 and new sensor
+      protos
+    - 2.3.1: Add rpmsgSession communication layer
+    - 2.3.1: Fix shikra registry config path and add systemd SOC-based
+      service gating
+    - 2.3.1: ci: use sudo for QMI Framework/FastRPC installs into system
+      paths
+    - 2.3.0: Add core QMI/GLink session implementation module
+    - 2.3.0: Add sensors config registry subsystem
+    - 2.3.0: sensors: add sensorsdaemon (sensors.qti) service to open-source
+    - 2.3.0: Fix installed header paths for nanopb/proto
+    - 2.3.0: build.sh: pick qmi-headers
+    - 2.3.0: ci: install QMI Framework and enable OSS QMI build
+    - 2.3.0: ci: fix qmi-framework pkg-config Cflags to include
+      qmi_framework subdir
+    - 2.2.3: sensors: load versioned QshSession library
+    - 2.2.3: Replace pull_request_target with pull_request in GitHub
+      Actions workflow
+  * d/rules, d/control: add QMI/FastRPC and systemd service support
+  * Install sensors.qti daemon, sensor configs and systemd service
+  * Drop patches 0002, 0003 and 0004; keep the qshWakelock.cpp typo fix
 
- -- Debusine Action Bot <noreply@bot.invalid>  Fri, 21 Aug 2026 09:47:31 +0000
+ -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Wed, 14 Oct 2026 02:24:36 -0700
 
 qcom-sensing-hub (2.2.2-0qli3) forky; urgency=medium
 
