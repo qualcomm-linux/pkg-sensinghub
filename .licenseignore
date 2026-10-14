@@ -1,0 +1,3 @@
+# Upstream source files with different but compatible licenses.
+# These are vendored from qualcomm/sensinghub and are not modified by packaging.
+services/sensorsdaemon/vendor.sensors.daemon.rc

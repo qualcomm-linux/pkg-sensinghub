@@ -1,0 +1,6 @@
+# Upstream source files - semgrep findings are upstream issues, not packaging issues.
+# These are vendored from qualcomm/sensinghub and are not modified by packaging.
+core/sessionImpl/src/glinkSession.cpp
+core/sessionImpl/src/rpmsgSession.cpp
+core/sessionImpl/src/qmiSession.cpp
+core/sessionImpl/src/sessionImpl.cpp
