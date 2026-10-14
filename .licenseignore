@@ -1,0 +1,12 @@
+# Upstream source files vendored from qualcomm/sensinghub.
+# These are not modified by packaging - copyright/license issues are upstream's.
+apis/*
+build_config/*
+ci/*
+config/*
+core/*
+services/*
+utils/*
+Dockerfile
+Makefile.am
+configure.ac
