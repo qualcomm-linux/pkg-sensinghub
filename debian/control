@@ -24,6 +24,7 @@ Architecture: arm64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
+# dlopen
  libfastrpc1
 Description: Qualcomm Sensing Hub (runtime libraries)
  Qualcomm Sensing Hub (QSH) is an always-on, low-power interface designed to
