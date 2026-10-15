@@ -75,3 +75,19 @@ Description: Qualcomm Sensing Hub (session client)
  efficiently, reducing the need for frequent application processor wakeups.
  .
  This package provides the SessionClient example program.
+
+Package: sensinghub
+Architecture: arm64
+Section: contrib/misc
+Depends:
+ sensinghub-sensors-daemon (= ${binary:Version}),
+ sensinghub-session-client (= ${binary:Version}),
+ ${misc:Depends},
+Description: Qualcomm Sensing Hub (metapackage)
+ Qualcomm Sensing Hub (QSH) is an always-on, low-power interface designed to
+ collect, process, and combine sensor and contextual data. It offers stable
+ APIs that enable applications and services to interact with the hub
+ efficiently, reducing the need for frequent application processor wakeups.
+ .
+ This metapackage installs all QSH components: runtime libraries,
+ sensors daemon and session client.
