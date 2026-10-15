@@ -4,12 +4,12 @@ Maintainer: Agathe Porte <agathe.porte@oss.qualcomm.com>
 Uploaders: Venkata Akhil Segu <vsegu@qti.qualcomm.com>
 Build-Depends:
  debhelper-compat (= 13),
- libqmi-framework-dev [arm64],
- libfastrpc-dev [arm64],
 Build-Depends-Arch:
+ libfastrpc-dev,
  libglib2.0-dev,
  libnanopb-dev,
  libprotobuf-dev,
+ libqmi-framework-dev,
  libtool,
  nanopb,
  pkgconf,
