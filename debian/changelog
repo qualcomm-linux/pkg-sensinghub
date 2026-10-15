@@ -1,3 +1,15 @@
+qcom-sensing-hub (2.3.2-0qli1) forky; urgency=medium
+
+  [ Venkata Akhil Segu ]
+  * New upstream release 2.3.2
+  * New build dependencies on libfastrpc-dev and libqmi-framework-dev
+  * Build with additional support for QMI, FastRPC and GLib
+  * Install sensors.qti daemon, sensor configs and systemd service
+  * Drop patches merged upstream
+  * d/control: add sensinghub metapackage to install all components
+
+ -- Debusine Action Bot <noreply@bot.invalid>  Thu, 15 Oct 2026 15:13:07 +0000
+
 qcom-sensing-hub (2.2.2-0qli3~bpo13+1) trixie; urgency=medium
 
   [ Agathe Porte ]
