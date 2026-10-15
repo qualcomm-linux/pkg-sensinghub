@@ -1,8 +1,11 @@
-qcom-sensing-hub (2.2.2-0qli4~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.3.2-0qli1~) UNRELEASED; urgency=medium
 
-  * Unreleased changes
+  * New upstream release 2.3.2
+  * d/rules, d/control: add QMI/FastRPC and systemd service support
+  * Install sensors.qti daemon, sensor configs and systemd service
+  * Drop patches 0002, 0003 and 0004; keep the qshWakelock.cpp typo fix
 
- -- Debusine Action Bot <noreply@bot.invalid>  Fri, 21 Aug 2026 09:47:31 +0000
+ -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Wed, 14 Oct 2026 02:24:36 -0700
 
 qcom-sensing-hub (2.2.2-0qli3) forky; urgency=medium
 

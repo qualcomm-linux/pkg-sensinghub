@@ -1,1 +1,3 @@
 extend-diff-ignore = ^\.github
+extend-diff-ignore = ^\.licenseignore
+extend-diff-ignore = ^\.semgrepignore
