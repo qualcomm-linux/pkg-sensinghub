@@ -26,6 +26,12 @@ Depends:
  ${shlibs:Depends},
 # dlopen
  libfastrpc1
+Breaks:
+ qcom-sensors-registry (<<2.1.1-0qli1),
+ qcom-sensors-services (<<2.1.1-0qli1),
+Replaces:
+ qcom-sensors-registry (<<2.1.1-0qli1),
+ qcom-sensors-services (<<2.1.1-0qli1),
 Description: Qualcomm Sensing Hub (sensors daemon)
  Qualcomm Sensing Hub (QSH) is an always-on, low-power interface designed to
  collect, process, and combine sensor and contextual data. It offers stable
@@ -39,6 +45,10 @@ Architecture: arm64
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
+Breaks:
+ qcom-sensors-core (<<2.1.1-0qli1)
+Replaces:
+ qcom-sensors-core (<<2.1.1-0qli1)
 Description: Qualcomm Sensing Hub (runtime libraries)
  Qualcomm Sensing Hub (QSH) is an always-on, low-power interface designed to
  collect, process, and combine sensor and contextual data. It offers stable
@@ -53,6 +63,10 @@ Section: contrib/libdevel
 Depends:
  libsensinghub1 (= ${binary:Version}),
  ${misc:Depends},
+Breaks:
+ qcom-sensors-core-dev (<<2.1.1-0qli1)
+Replaces:
+ qcom-sensors-core-dev (<<2.1.1-0qli1)
 Description: Qualcomm Sensing Hub (development files)
  Qualcomm Sensing Hub (QSH) is an always-on, low-power interface designed to
  collect, process, and combine sensor and contextual data. It offers stable
