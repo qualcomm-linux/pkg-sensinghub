@@ -74,7 +74,11 @@ cc_library_shared {
         "sns_sig_motion.proto",
         "sns_tilt.proto",
         "sns_transport_ppe.proto",
-        "sns_color.proto"
+        "sns_color.proto",
+        "sns_device_context.proto",
+        "sns_human_presence_detect.proto",
+        "sns_ontable_detect.proto",
+        "sns_presence.proto"
     ],
     local_include_dirs: ["./"],
     cppflags: ["-DGOOGLE_PROTOBUF_NO_RTTI"],
@@ -150,7 +154,11 @@ filegroup {
         "sns_sig_motion.proto",
         "sns_tilt.proto",
         "sns_transport_ppe.proto",
-        "sns_color.proto"
+        "sns_color.proto",
+        "sns_device_context.proto",
+        "sns_human_presence_detect.proto",
+        "sns_ontable_detect.proto",
+        "sns_presence.proto"
     ],
 }
 
@@ -195,7 +203,11 @@ genrule_defaults {
         "sns_sig_motion.proto",
         "sns_tilt.proto",
         "sns_transport_ppe.proto",
-        "sns_color.proto"
+        "sns_color.proto",
+        "sns_device_context.proto",
+        "sns_human_presence_detect.proto",
+        "sns_ontable_detect.proto",
+        "sns_presence.proto"
     ],
     tools: [
         "aprotoc",
@@ -267,6 +279,10 @@ genrule {
         "sns_tilt.pb.h",
         "sns_transport_ppe.pb.h",
         "sns_color.pb.h",
+        "sns_device_context.pb.h",
+        "sns_human_presence_detect.pb.h",
+        "sns_ontable_detect.pb.h",
+        "sns_presence.pb.h",
     ],
     export_include_dirs: [
         "google/protobuf",
@@ -319,6 +335,10 @@ genrule {
         "sns_tilt.pb.c",
         "sns_transport_ppe.pb.c",
         "sns_color.pb.c",
+        "sns_device_context.pb.c",
+        "sns_human_presence_detect.pb.c",
+        "sns_ontable_detect.pb.c",
+        "sns_presence.pb.c",
     ],
     export_include_dirs: [
         "google/protobuf"
@@ -588,6 +608,34 @@ prebuilt_etc {
 prebuilt_etc {
     name: "sns_color.proto",
     src: "sns_color.proto",
+    sub_dir: "sensors/proto",
+    vendor: true,
+    owner: "qti",
+}
+prebuilt_etc {
+    name: "sns_device_context.proto",
+    src: "sns_device_context.proto",
+    sub_dir: "sensors/proto",
+    vendor: true,
+    owner: "qti",
+}
+prebuilt_etc {
+    name: "sns_human_presence_detect.proto",
+    src: "sns_human_presence_detect.proto",
+    sub_dir: "sensors/proto",
+    vendor: true,
+    owner: "qti",
+}
+prebuilt_etc {
+    name: "sns_ontable_detect.proto",
+    src: "sns_ontable_detect.proto",
+    sub_dir: "sensors/proto",
+    vendor: true,
+    owner: "qti",
+}
+prebuilt_etc {
+    name: "sns_presence.proto",
+    src: "sns_presence.proto",
     sub_dir: "sensors/proto",
     vendor: true,
     owner: "qti",
