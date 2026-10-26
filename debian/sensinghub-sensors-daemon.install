@@ -1,0 +1,5 @@
+usr/bin/sensors.qti
+etc/sensors/*
+usr/lib/firmware/qcom/shikra/sensors/*
+var/lib/tqftpserv/sensors/registry/*
+usr/lib/systemd/system/sensors.qti.service
