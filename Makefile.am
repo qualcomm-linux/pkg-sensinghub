@@ -4,7 +4,10 @@ dirs = apis/proto \
        session/1.0  \
        utils \
        sessionlogger  \
-       examples/SessionClient
+       core \
+       config \
+       examples/SessionClient \
+       services/sensorsdaemon
 
 SUBDIRS = $(dirs)
 

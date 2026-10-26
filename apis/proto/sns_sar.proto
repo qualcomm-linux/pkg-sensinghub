@@ -3,7 +3,7 @@
 // @brief Defines the API for Specific Absorption Rate (SAR) Sensors.
 //
 // @copyright 
-// Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+// Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 // SPDX-License-Identifier: BSD-3-Clause-Clear
 //
 // @details SAR sensors typically detect human object proximity using change in capacitance
