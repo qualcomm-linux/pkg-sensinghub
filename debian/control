@@ -1,25 +1,88 @@
 Source: qcom-sensing-hub
 Section: libs
 Priority: optional
-Maintainer: Bhanu Vivek Matsa <quic_bmasta@quicinc.com>
-Build-Depends: debhelper-compat (= 13), pkgconf, libtool, libglib2.0-dev, protobuf-compiler,
- libprotobuf-dev, nanopb, libnanopb-dev
-Standards-Version: 4.6.2
+Maintainer: Venkata Akhil Segu <vsegu@qti.qualcomm.com>
+Build-Depends:
+ debhelper-compat (= 13),
+Build-Depends-Arch:
+ libfastrpc-dev,
+ libglib2.0-dev,
+ libnanopb-dev,
+ libprotobuf-dev,
+ libqmi-framework-dev,
+ libtool,
+ nanopb,
+ pkgconf,
+ protobuf-compiler,
+Standards-Version: 4.7.4
 Rules-Requires-Root: no
-Homepage: https://git.codelinaro.org/clo/le/platform/vendor/qcom-opensource/sensing-hub.git
+Homepage: https://github.com/qualcomm/sensinghub
+Vcs-Browser: https://github.com/qualcomm-linux/pkg-sensinghub
+Vcs-Git: https://github.com/qualcomm-linux/pkg-sensinghub.git
 
-Package: qcom-sensing-hub
+Package: libsensinghub1
 Architecture: arm64
-Replaces: libsensinghub1
-Breaks: libsensinghub1
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Qualcomm Sensing-hub APIs Library
+Breaks:
+ qcom-sensing-hub,
+Replaces:
+ qcom-sensing-hub,
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+# dlopen
+ libfastrpc1,
+Description: Qualcomm Sensing Hub (runtime libraries)
+ Qualcomm Sensing Hub (QSH) is an always-on, low-power interface designed to
+ collect, process, and combine sensor and contextual data. It offers stable
+ APIs that enable applications and services to interact with the hub
+ efficiently, reducing the need for frequent application processor wakeups.
+ .
+ This package provides the API runtime libraries.
 
-Package: qcom-sensing-hub-dev
+Package: libsensinghub-dev
 Architecture: arm64
-Replaces: libsensinghub-dev
-Breaks: libsensinghub-dev
 Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends},
- qcom-sensing-hub (= ${binary:Version})
-Description: Qualcomm Sensing-hub APIs Library dev package
+Breaks:
+ qcom-sensing-hub-dev,
+Replaces:
+ qcom-sensing-hub-dev,
+Depends:
+ libsensinghub1 (= ${binary:Version}),
+ ${misc:Depends},
+Description: Qualcomm Sensing Hub (development files)
+ Qualcomm Sensing Hub (QSH) is an always-on, low-power interface designed to
+ collect, process, and combine sensor and contextual data. It offers stable
+ APIs that enable applications and services to interact with the hub
+ efficiently, reducing the need for frequent application processor wakeups.
+ .
+ This package provides files necessary to develop programs using the libraries.
+
+Package: sensinghub-sensors-daemon
+Architecture: arm64
+Section: misc
+Depends:
+ libsensinghub1 (= ${binary:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Qualcomm Sensing Hub (sensors daemon)
+ Qualcomm Sensing Hub (QSH) is an always-on, low-power interface designed to
+ collect, process, and combine sensor and contextual data. It offers stable
+ APIs that enable applications and services to interact with the hub
+ efficiently, reducing the need for frequent application processor wakeups.
+ .
+ This package provides the sensors daemon and systemd service unit.
+
+Package: sensinghub-session-client
+Architecture: arm64
+Section: misc
+Depends:
+ libsensinghub1 (= ${binary:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Qualcomm Sensing Hub (session client)
+ Qualcomm Sensing Hub (QSH) is an always-on, low-power interface designed to
+ collect, process, and combine sensor and contextual data. It offers stable
+ APIs that enable applications and services to interact with the hub
+ efficiently, reducing the need for frequent application processor wakeups.
+ .
+ This package provides the SessionClient example program.
