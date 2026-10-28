@@ -1,8 +1,11 @@
-qcom-sensing-hub (2.3.2-0qli3~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.3.3-0qli1~) UNRELEASED; urgency=medium
 
-  * Unreleased changes
+  * New upstream release 2.3.3
+  * Fix qshJsonParser member initialization order
+  * Consolidate hub1/hub2 sensor registry configs into default
+  * Update SPDX license identifier to BSD-3-Clause
 
- -- Debusine Action Bot <noreply@bot.invalid>  Fri, 23 Oct 2026 14:36:10 +0000
+ -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Tue, 28 Oct 2026 00:00:00 +0530
 
 qcom-sensing-hub (2.3.2-0qli2) forky; urgency=medium
 
@@ -56,7 +59,10 @@ qcom-sensing-hub (2.2.2-0qli1) forky; urgency=medium
 qcom-sensing-hub (2.2.1-0qli+staging3) forky; urgency=medium
 
   [ Venkata Akhil Segu ]
-  * Unreleased changes
+  * New upstream release 2.3.3
+  * Fix qshJsonParser member initialization order
+  * Consolidate hub1/hub2 sensor registry configs into default
+  * Update SPDX license identifier to BSD-3-Clause
 
  -- Debusine Action GitHub Bot <noreply@bot.invalid>  Mon, 13 Jul 2026 22:20:15 +0000
 

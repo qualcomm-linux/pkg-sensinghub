@@ -53,8 +53,7 @@ sns_tilt_to_wake.json
 sns_transport_ppe.json
 stm_lid_angle.json
 qsh_camera_common.json
-qsh_camera_ov08x_2.json
-qsh_camera_ov08x_3.json
+qsh_camera_ov08x_0.json
 qsh_ec.json
 8480_crd_r2_lsm6dsv_0.json
 8480_crd_r2_lsm6dsv_1.json

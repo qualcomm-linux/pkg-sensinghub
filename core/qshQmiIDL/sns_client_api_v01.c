@@ -6,7 +6,7 @@ GENERAL DESCRIPTION
   This is the file which defines the SNS_CLIENT_SVC service Data structures.
 
   Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-  SPDX-License-Identifier: BSD-3-Clause-Clear
+  SPDX-License-Identifier: BSD-3-Clause
 
   $Header: //components/rel/qmimsgs.adsp/2.6.3/sns_client_api/src/sns_client_api_v01.c#4 $
  *====*====*====*====*====*====*====*====*====*====*====*====*====*====*====*/

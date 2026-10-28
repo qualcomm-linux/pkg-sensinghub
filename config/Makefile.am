@@ -10,66 +10,66 @@ shikra_dir = @base_libdir@/firmware/qcom/shikra/sensors
 shikra_out_dir = @localstatedir@/lib/tqftpserv/sensors/registry
 rules_out_dir = @sysconfdir@/udev/rules.d
 
-common_list = $(wildcard $(srcdir)/registry/hub1/sensors/common/*.json)
+common_list = $(wildcard $(srcdir)/registry/default/sensors/common/*.json)
 common_jsondir   = $(reg_config_dir)/config
 common_json_DATA = $(common_list)
 
-qcm6490_list = $(wildcard $(srcdir)/registry/hub1/sensors/qcm6490/*.json)
+qcm6490_list = $(wildcard $(srcdir)/registry/default/sensors/qcm6490/*.json)
 qcm6490_jsondir = $(reg_config_dir)/config
 qcm6490_json_DATA = $(qcm6490_list)
 
 jsonlst_filesdir = $(reg_config_dir)/config
-jsonlst_files_DATA = $(srcdir)/registry/hub1/sensors/qli/json.lst
+jsonlst_files_DATA = $(srcdir)/registry/default/sensors/qli/json.lst
 
 regconfig_filesdir = $(reg_config_dir)
-regconfig_files_DATA = $(srcdir)/registry/hub1/sensors/qcm6490/sns_reg_config
+regconfig_files_DATA = $(srcdir)/registry/default/sensors/qcm6490/sns_reg_config
 
-hamoa_list = $(wildcard $(srcdir)/registry/hub1/sensors/hamoa/*.json)
+hamoa_list = $(wildcard $(srcdir)/registry/default/sensors/hamoa/*.json)
 hamoa_jsondir = $(reg_config_dir)/config
 hamoa_json_DATA = $(hamoa_list)
 
-pakala_list = $(wildcard $(srcdir)/registry/hub1/sensors/sun/*.json)
+pakala_list = $(wildcard $(srcdir)/registry/default/sensors/sun/*.json)
 pakala_jsondir = $(reg_config_dir)/config
 pakala_json_DATA = $(pakala_list)
 
-knp_list = $(wildcard $(srcdir)/registry/hub1/sensors/canoe/kaanapali*.json)
+knp_list = $(wildcard $(srcdir)/registry/default/sensors/canoe/kaanapali*.json)
 knp_jsondir = $(reg_config_dir)/config
 knp_json_DATA = $(knp_list)
 
-glymur_list = $(wildcard $(srcdir)/registry/hub1/sensors/glymur/*.json)
+glymur_list = $(wildcard $(srcdir)/registry/default/sensors/glymur/*.json)
 glymur_jsondir = $(reg_config_dir)/config
 glymur_json_DATA = $(glymur_list)
 
-bengal_list = $(wildcard $(srcdir)/registry/hub1/sensors/bengal/*.json)
+bengal_list = $(wildcard $(srcdir)/registry/default/sensors/bengal/*.json)
 bengal_jsondir = $(reg_config_dir)/config
 bengal_json_DATA = $(bengal_list)
 
-kalama_list = $(wildcard $(srcdir)/registry/hub1/sensors/kalama/*.json)
+kalama_list = $(wildcard $(srcdir)/registry/default/sensors/kalama/*.json)
 kalama_jsondir = $(reg_config_dir)/config
 kalama_json_DATA = $(kalama_list)
 
-qrb5165_list = $(wildcard $(srcdir)/registry/hub1/sensors/qrb5165/*.json)
+qrb5165_list = $(wildcard $(srcdir)/registry/default/sensors/qrb5165/*.json)
 qrb5165_jsondir = $(reg_config_dir)/config
 qrb5165_json_DATA = $(qrb5165_list)
 
-qrbx210_list = $(wildcard $(srcdir)/registry/hub1/sensors/qrbx210/*.json)
+qrbx210_list = $(wildcard $(srcdir)/registry/default/sensors/qrbx210/*.json)
 qrbx210_jsondir = $(reg_config_dir)/config
 qrbx210_json_DATA = $(qrbx210_list)
 
-talos_list = $(shell find  $(srcdir)/registry/hub1/sensors/talos/*.json -type f)
+talos_list = $(shell find  $(srcdir)/registry/default/sensors/talos/*.json -type f)
 talos_jsondir = $(reg_config_dir)/config
 talos_json_DATA = $(talos_list)
 
-shikra_list = $(wildcard $(srcdir)/registry/hub1/sensors/shikra/*.json)
+shikra_list = $(wildcard $(srcdir)/registry/default/sensors/shikra/*.json)
 shikra_jsondir = $(reg_config_dir)/config
 shikra_json_DATA = $(shikra_list)
 
 output_filesdir = $(shikra_out_dir)
-output_files_DATA = $(srcdir)/registry/hub1/sns_reg_version \
-                    $(srcdir)/registry/hub1/sensors_registry
+output_files_DATA = $(srcdir)/registry/default/sns_reg_version \
+                    $(srcdir)/registry/default/sensors_registry
 
 shikra_regconfig_filesdir = $(shikra_dir)
-shikra_regconfig_files_DATA = $(srcdir)/registry/hub1/sensors/shikra/sns_reg_config
+shikra_regconfig_files_DATA = $(srcdir)/registry/default/sensors/shikra/sns_reg_config
 
 sns_reg_verdir = $(version_dir)
-sns_reg_ver_DATA = $(srcdir)/registry/hub1/sns_reg_version
+sns_reg_ver_DATA = $(srcdir)/registry/default/sns_reg_version

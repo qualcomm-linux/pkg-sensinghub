@@ -1,6 +1,6 @@
 /*
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
- * SPDX-License-Identifier: BSD-3-Clause-Clear
+ * SPDX-License-Identifier: BSD-3-Clause
  */
 
 #include <cstring>
@@ -121,7 +121,7 @@ int32_t qshWakelock::acquire()
   int32_t ret = -1;
   if (mFds[QSH_POWER_WAKE_lOCK_ACQUIRE_INDEX] >= 0) {
     if (write( mFds[QSH_POWER_WAKE_lOCK_ACQUIRE_INDEX], mQshWakelockName.c_str(), mQshWakelockName.length()+1) > 0) {
-      sns_logv("sucess wakelock acquire:%s", mQshWakelockName.c_str());
+      sns_logv("success wakelock acquire:%s", mQshWakelockName.c_str());
       mIsHeld = true;
       mCondition.notify_one();
       ret = 0;
@@ -139,7 +139,7 @@ int32_t qshWakelock::release()
   int32_t ret = -1;
   if (mFds[QSH_POWER_WAKE_lOCK_RELEASE_INDEX] >= 0) {
     if (write( mFds[QSH_POWER_WAKE_lOCK_RELEASE_INDEX],mQshWakelockName.c_str(), mQshWakelockName.length()+1) > 0) {
-      sns_logv("sucess release %s wakelock", mQshWakelockName.c_str());
+      sns_logv("success release %s wakelock", mQshWakelockName.c_str());
       mIsHeld = false;
       ret = 0;
     } else {
