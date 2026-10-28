@@ -1,3 +1,10 @@
+qcom-sensing-hub (2.3.2-0qli3) forky; urgency=medium
+
+  [ Agathe Porte ]
+  * libsensinghub-dev: install missing sns_client_api_v01.h
+
+ -- Debusine Action Bot <noreply@bot.invalid>  Wed, 28 Oct 2026 17:15:29 +0000
+
 qcom-sensing-hub (2.3.2-0qli2~bpo13+1) trixie; urgency=medium
 
   [ Agathe Porte ]
