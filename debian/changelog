@@ -1,8 +1,9 @@
-qcom-sensing-hub (2.3.2-0qli3~bpo13+1~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.3.2-0qli3~bpo13+1) trixie; urgency=medium
 
+  [ Agathe Porte ]
   * Rebuild for trixie.
 
- -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Wed, 28 Oct 2026 18:20:36 +0100
+ -- Debusine Action Bot <noreply@bot.invalid>  Wed, 28 Oct 2026 17:22:01 +0000
 
 qcom-sensing-hub (2.3.2-0qli3) forky; urgency=medium
 
