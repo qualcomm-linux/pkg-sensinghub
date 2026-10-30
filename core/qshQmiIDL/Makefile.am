@@ -20,7 +20,8 @@ AM_CPPFLAGS += @QMIFRAMEWORK_CFLAGS@
 requiredlibs += @QMIFRAMEWORK_LIBS@
 endif
 
-
+library_includedir = $(pkgincludedir)
+include_HEADERS = ./*.h
 
 lib_LTLIBRARIES = libQshQmiIDL.la
 libQshQmiIDL_la_CC = @CC@
