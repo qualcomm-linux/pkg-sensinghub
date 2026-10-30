@@ -61,6 +61,8 @@ Package: libsensinghub-dev
 Architecture: arm64
 Section: contrib/libdevel
 Depends:
+ libfastrpc-dev,
+ libqmi-framework-dev,
  libsensinghub1 (= ${binary:Version}),
  ${misc:Depends},
 Breaks:
