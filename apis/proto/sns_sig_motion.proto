@@ -4,7 +4,7 @@
 //
 // @copyright
 // Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-// SPDX-License-Identifier: BSD-3-Clause-Clear
+// SPDX-License-Identifier: BSD-3-Clause
 //
 // @details A significant motion sensor reports once if "significant motion"
 // is detected.

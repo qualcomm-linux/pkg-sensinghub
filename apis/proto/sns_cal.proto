@@ -4,7 +4,7 @@
 //
 // @copyright
 // Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-// SPDX-License-Identifier: BSD-3-Clause-Clear
+// SPDX-License-Identifier: BSD-3-Clause
 //
 // @details This file defined Standard message IDs supported by Physical
 // Sensors as well as Dynamic Calibration Sensors such as "gyro_cal", "mag_cal".

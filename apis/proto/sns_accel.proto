@@ -4,7 +4,7 @@
 //
 // @copyright
 // Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-// SPDX-License-Identifier: BSD-3-Clause-Clear
+// SPDX-License-Identifier: BSD-3-Clause
 //
 // @details All Accelerometer Sensor drivers are required to comply with this API.
 // Any additional functionality for Accelerometer Sensor may be defined in a

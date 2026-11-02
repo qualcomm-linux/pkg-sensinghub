@@ -1,3 +1,15 @@
+qcom-sensing-hub (2.3.3-0qli1) forky; urgency=medium
+
+  [ Venkata Akhil Segu ]
+  * New upstream release 2.3.3
+  * Drop 0001-qshWakelock.cpp-fix-typo-sucess-success.patch merged upstream
+  * libsensinghub-dev: add dependencies on libfastrpc-dev and
+    libqmi-framework-dev
+  * libsensinghub-dev: drop manual install of sns_client_api_v01.h,
+    now installed by upstream Makefile.am
+
+ -- Debusine Action Bot <noreply@bot.invalid>  Mon, 02 Nov 2026 13:38:37 +0000
+
 qcom-sensing-hub (2.3.2-0qli3~bpo13+1) trixie; urgency=medium
 
   [ Agathe Porte ]
@@ -100,7 +112,10 @@ qcom-sensing-hub (2.2.2-0qli1) forky; urgency=medium
 qcom-sensing-hub (2.2.1-0qli+staging3) forky; urgency=medium
 
   [ Venkata Akhil Segu ]
-  * Unreleased changes
+  * New upstream release 2.3.3
+  * Fix qshJsonParser member initialization order
+  * Consolidate hub1/hub2 sensor registry configs into default
+  * Update SPDX license identifier to BSD-3-Clause
 
  -- Debusine Action GitHub Bot <noreply@bot.invalid>  Mon, 13 Jul 2026 22:20:15 +0000
 
