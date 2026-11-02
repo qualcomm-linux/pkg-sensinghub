@@ -1,9 +1,6 @@
 qcom-sensing-hub (2.3.3-0qli1~) UNRELEASED; urgency=medium
 
   * New upstream release 2.3.3
-  * Fix qshJsonParser member initialization order
-  * Consolidate hub1/hub2 sensor registry configs into default
-  * Update SPDX license identifier to BSD-3-Clause
   * Drop 0001-qshWakelock.cpp-fix-typo-sucess-success.patch merged upstream
   * libsensinghub-dev: add dependencies on libfastrpc-dev and
     libqmi-framework-dev
