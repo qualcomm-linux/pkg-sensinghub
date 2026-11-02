@@ -1,4 +1,3 @@
 usr/include
 usr/lib/${DEB_HOST_MULTIARCH}/lib*.so
 usr/lib/${DEB_HOST_MULTIARCH}/pkgconfig/*
-core/qshQmiIDL/sns_client_api_v01.h usr/include

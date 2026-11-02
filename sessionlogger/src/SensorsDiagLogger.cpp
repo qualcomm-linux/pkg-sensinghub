@@ -1,6 +1,6 @@
 /*
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
- * SPDX-License-Identifier: BSD-3-Clause-Clear
+ * SPDX-License-Identifier: BSD-3-Clause
  */
 
 #include <sstream>
@@ -20,7 +20,7 @@ void SensorsDiagLogger::diagShimInit() {
     return;
   }
   // Attempt to load the diag shim
-  _diagShim.handle = dlopen("libsnsdiagshim-c.so", RTLD_NOW);
+  _diagShim.handle = dlopen("libsnsdiagshim-c.so.2", RTLD_NOW);
   if (!_diagShim.handle) {
     return;
   }
@@ -51,10 +51,10 @@ bool SensorsDiagLogger::isAvailable() {
   static bool sLibdiagAvailable = false;
   if (!sLibdiagChecked) {
     sLibdiagChecked = true;
-    void* libdiagHandle = dlopen("libdiag.so", RTLD_NOW | RTLD_NOLOAD);
+    void* libdiagHandle = dlopen("libdiag.so.1", RTLD_NOW | RTLD_NOLOAD);
     if (!libdiagHandle) {
       // Not already loaded — try a fresh load.
-      libdiagHandle = dlopen("libdiag.so", RTLD_NOW);
+      libdiagHandle = dlopen("libdiag.so.1", RTLD_NOW);
     }
     sLibdiagAvailable = (libdiagHandle != nullptr);
   }

@@ -14,7 +14,7 @@ cc_library_shared {
     local_include_dirs: [
         "inc",
     ],
-    include_dirs:["vendor/qcom-opensource/sensing-hub/core/qshQmiIDL"],
+    include_dirs:["vendor/qcom/opensource/sensing-hub/core/qshQmiIDL"],
     cflags: [
         "-Werror",
         "-Wall",

@@ -5,7 +5,7 @@
 //
 // @copyright
 // Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-// SPDX-License-Identifier: BSD-3-Clause-Clear
+// SPDX-License-Identifier: BSD-3-Clause
 //
 // @details Example: "accel" Sensor may be gated by motion status as published by
 //          the "motion_detect" Sensor.

@@ -4,7 +4,7 @@
 //
 // @copyright 
 // Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-// SPDX-License-Identifier: BSD-3-Clause-Clear
+// SPDX-License-Identifier: BSD-3-Clause
 //
 // @details All physical Sensor drivers are required to use this API to support
 // self-test. SNS_PHYSICAL_SENSOR_TEST_TYPE_COM is a mandatory test type and must be

@@ -4,7 +4,7 @@
 //
 // @copyright
 // Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-// SPDX-License-Identifier: BSD-3-Clause-Clear
+// SPDX-License-Identifier: BSD-3-Clause
 //
 // @details The device orientation sensor reports the current orientation of the device.
 // It is typically used for Portrait/Landscape determination by the User Interface.
