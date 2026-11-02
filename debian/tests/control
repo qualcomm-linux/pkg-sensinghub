@@ -1,0 +1,7 @@
+Tests: session-client
+Architecture: arm64
+Classes: target
+Depends:
+ sensinghub-session-client
+Restrictions:
+ skippable,
