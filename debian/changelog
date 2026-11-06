@@ -1,8 +1,6 @@
 qcom-sensing-hub (2.3.4-0qli1~) UNRELEASED; urgency=medium
 
   * New upstream release 2.3.4
-  * Update qli folder json.lst to accommodate qsh_camera_common.json
-    and qsh_camera_ov08x_0.json
 
  -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Thu, 06 Nov 2026 00:00:00 +0530
 
