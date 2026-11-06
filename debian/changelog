@@ -1,8 +1,9 @@
 qcom-sensing-hub (2.3.4-0qli1~) UNRELEASED; urgency=medium
 
+  [ Venkata Akhil Segu ]
   * New upstream release 2.3.4
 
- -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Thu, 06 Nov 2026 00:00:00 +0530
+ -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Fri, 06 Nov 2026 11:03:21 +0000
 
 qcom-sensing-hub (2.3.3-0qli1) forky; urgency=medium
 
