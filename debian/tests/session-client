@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+
+if [ ! -f /sys/firmware/devicetree/base/compatible ]
+then
+	>&2 echo "File /sys/firmware/devicetree/base/compatible not found, skip"
+	exit 77
+fi
+
+COMPATIBLE="$(cat /sys/firmware/devicetree/base/compatible | tr '\0' ' ')"
+
+if [ "$COMPATIBLE" != "qcom,glymur-crd qcom,glymur " ]
+then
+	>&2 echo "Compatible '$COMPATIBLE' unsupported, skip"
+	exit 77
+fi
+
+/usr/bin/SessionClient || exit 1

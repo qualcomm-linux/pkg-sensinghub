@@ -1,3 +1,10 @@
+qcom-sensing-hub (2.3.4-0qli1) forky; urgency=medium
+
+  [ Venkata Akhil Segu ]
+  * New upstream release 2.3.4
+
+ -- Debusine Action Bot <noreply@bot.invalid>  Fri, 06 Nov 2026 11:05:03 +0000
+
 qcom-sensing-hub (2.3.3-0qli1~bpo13+1) trixie; urgency=medium
 
   [ Agathe Porte ]
