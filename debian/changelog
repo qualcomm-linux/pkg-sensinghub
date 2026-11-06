@@ -1,8 +1,10 @@
-qcom-sensing-hub (2.3.3-0qli2~) UNRELEASED; urgency=medium
+qcom-sensing-hub (2.3.4-0qli1~) UNRELEASED; urgency=medium
 
-  * Introduce session-client autopkgtest on target
+  * New upstream release 2.3.4
+  * Update qli folder json.lst to accommodate qsh_camera_common.json
+    and qsh_camera_ov08x_0.json
 
- -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Mon, 02 Nov 2026 16:10:36 +0000
+ -- Venkata Akhil Segu <vsegu@qti.qualcomm.com>  Thu, 06 Nov 2026 00:00:00 +0530
 
 qcom-sensing-hub (2.3.3-0qli1) forky; urgency=medium
 
