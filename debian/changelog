@@ -1,3 +1,9 @@
+qcom-sensing-hub (2.3.4-0qli1~bpo13+1~) UNRELEASED; urgency=medium
+
+  * Rebuild for trixie.
+
+ -- Agathe Porte <agathe.porte@oss.qualcomm.com>  Fri, 06 Nov 2026 11:10:40 +0000
+
 qcom-sensing-hub (2.3.4-0qli1) forky; urgency=medium
 
   [ Venkata Akhil Segu ]
